@@ -1,0 +1,204 @@
+{
+ "generated": "2026-11-16T23:23:27.818796+00:00",
+ "results": {
+  "justice": {
+   "justice": [
+    {
+     "variable": "income",
+     "label": "Median household income",
+     "unit": "USD",
+     "fmt": "usd",
+     "scale": "linear",
+     "dir": -1,
+     "value": 93368.35090310819,
+     "pct": 51.9,
+     "pillar_score": 56.7
+    },
+    {
+     "variable": "people_of_colour",
+     "label": "Share of residents who are people of colour",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.3818507887400999,
+     "pct": 45.0,
+     "pillar_score": 56.7
+    },
+    {
+     "variable": "poverty",
+     "label": "Share of residents below the poverty line",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.11166785796099044,
+     "pct": 64.1,
+     "pillar_score": 56.7
+    },
+    {
+     "variable": "redlined",
+     "label": "Share of the radius graded hazardous in the 1930s",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 8.817005545286507e-05,
+     "pct": 91.5,
+     "pillar_score": 56.7
+    },
+    {
+     "variable": "residents",
+     "label": "Residents within the radius",
+     "unit": "people",
+     "fmt": "compact",
+     "scale": "log",
+     "dir": 1,
+     "value": 287.6056450852052,
+     "pct": 29.0,
+     "pillar_score": 56.7
+    },
+    {
+     "variable": "svi",
+     "label": "Social vulnerability index",
+     "unit": "percentile 0\u20131",
+     "fmt": "num2",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.4788205809811161,
+     "pct": 58.8,
+     "pillar_score": 56.7
+    }
+   ]
+  },
+  "water": {
+   "water": [
+    {
+     "variable": "cooling_water",
+     "label": "Cooling water consumption",
+     "unit": "million gallons per year",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": 1,
+     "value": null,
+     "pct": null,
+     "pillar_score": 54.6
+    },
+    {
+     "variable": "flood_share",
+     "label": "Flood zone share of the radius",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.07831538401109057,
+     "pct": 57.0,
+     "pillar_score": 54.6
+    },
+    {
+     "variable": "water_system",
+     "label": "People served by the local water system",
+     "unit": "people",
+     "fmt": "compact",
+     "scale": "log",
+     "dir": 1,
+     "value": 10718.70933456562,
+     "pct": 31.0,
+     "pillar_score": 54.6
+    },
+    {
+     "variable": "watershed_peers",
+     "label": "Other facilities in the same HUC8 subbasin",
+     "unit": "facilities",
+     "fmt": "int",
+     "scale": "linear",
+     "dir": 1,
+     "value": null,
+     "pct": null,
+     "pillar_score": 54.6
+    },
+    {
+     "variable": "wetland_share",
+     "label": "Wetland share of the radius",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.06386854852125692,
+     "pct": 75.9,
+     "pillar_score": 54.6
+    }
+   ]
+  },
+  "biodiversity": {
+   "biodiversity": [
+    {
+     "variable": "critical_habitat",
+     "label": "Critical habitat share of the radius",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.043732042513863215,
+     "pct": 98.6,
+     "pillar_score": 74.6
+    },
+    {
+     "variable": "imperiled",
+     "label": "Mean imperiled species richness",
+     "unit": "species",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": 1,
+     "value": 2.234375689411765,
+     "pct": 28.8,
+     "pillar_score": 74.6
+    },
+    {
+     "variable": "intactness",
+     "label": "Landscape intactness in the radius",
+     "unit": "1 \u2212 gHM",
+     "fmt": "num2",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.7396116952380952,
+     "pct": 97.7,
+     "pillar_score": 74.6
+    },
+    {
+     "variable": "natural_site",
+     "label": "Natural land in the site cell",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.639860737245841,
+     "pct": 85.1,
+     "pillar_score": 74.6
+    },
+    {
+     "variable": "protected",
+     "label": "Protected area share of the radius",
+     "unit": "share",
+     "fmt": "pct",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.24313742097966726,
+     "pct": 97.9,
+     "pillar_score": 74.6
+    },
+    {
+     "variable": "threatened",
+     "label": "Mean threatened species richness",
+     "unit": "species",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": 1,
+     "value": 9.92512707948244,
+     "pct": 39.5,
+     "pillar_score": 74.6
+    }
+   ]
+  }
+ }
+}

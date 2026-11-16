@@ -1,0 +1,87 @@
+{
+ "generated": "2026-11-16T23:23:27.818796+00:00",
+ "results": {
+  "climate": {
+   "climate": [
+    {
+     "variable": "cooling_energy",
+     "label": "Cooling energy demand",
+     "unit": "MWh per year",
+     "fmt": "compact",
+     "scale": "linear",
+     "dir": 1,
+     "value": null,
+     "pct": null,
+     "pillar_score": 79.0
+    },
+    {
+     "variable": "floor_area",
+     "label": "Floor area",
+     "unit": "sq ft",
+     "fmt": "compact",
+     "scale": "log",
+     "dir": 1,
+     "value": null,
+     "pct": null,
+     "pillar_score": 79.0
+    },
+    {
+     "variable": "fossil_power",
+     "label": "Dedicated fossil power reported",
+     "unit": "yes = 1",
+     "fmt": "int",
+     "scale": "linear",
+     "dir": 1,
+     "value": null,
+     "pct": null,
+     "pillar_score": 79.0
+    },
+    {
+     "variable": "power_mw",
+     "label": "Power capacity",
+     "unit": "MW",
+     "fmt": "compact",
+     "scale": "log",
+     "dir": 1,
+     "value": null,
+     "pct": null,
+     "pillar_score": 79.0
+    },
+    {
+     "variable": "site_carbon",
+     "label": "Vulnerable carbon in the site cell",
+     "unit": "Mg C",
+     "fmt": "compact",
+     "scale": "linear",
+     "dir": 1,
+     "value": 2935.543560827172,
+     "pct": 79.0,
+     "pillar_score": 79.0
+    }
+   ]
+  },
+  "facility": {
+   "facility": [
+    {
+     "name": "United States",
+     "source": "FracTracker",
+     "status": "606 facilities in view",
+     "operator": null,
+     "tenant": null,
+     "mw": 23267.55,
+     "online": null,
+     "power_source": null,
+     "dedicated_power": null,
+     "cooling": null,
+     "pushback": "18 facilities with community pushback reported",
+     "resistance": null,
+     "nda": null,
+     "state": null,
+     "county": null,
+     "actions": null,
+     "nearby": null
+    }
+   ]
+  }
+ }
+}

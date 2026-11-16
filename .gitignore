@@ -3,3 +3,5 @@
 # Editor / notebook artifacts
 .ipynb_checkpoints/
 .vscode/
+
+__pycache__/

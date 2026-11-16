@@ -1,6 +1,6 @@
 # Data Center Explorer design
 
-**Status: draft for discussion.** Nothing here is built yet. Numbers marked [verify] are estimates.
+**Status: first version built, scores provisional.** The explorer in this folder follows this design, with the changes and decisions noted below. The variables, directions and weights have not been reviewed.
 
 ## Purpose
 
@@ -18,32 +18,37 @@ The Wetland Basin Explorer (`boettiger-lab/wetlands-v2/explorer`) is configurati
 
 ## Units
 
-A unit is one data center from the chosen source. Its area of interest is the set of H3 resolution-8 cells within a radius of the facility, computed with `h3_grid_disk` around the facility's cell. Sources with footprints (PNNL campuses, Epoch footprints, PNNL projected sites) add the cells of the footprint itself. Some variables use the radius, which describes the neighbourhood; others use only the facility's own cells, which describe the land the facility occupies. Each variable's method text says which.
+A unit is one data center from the chosen source. Neighbourhood variables use the H3 resolution-8 cells whose centre lies within the chosen radius of the facility point (a disk from `h3_grid_disk`, trimmed by great-circle distance). At 5 miles the cells cover 203 km² on average, against 203.6 km² for the exact circle. Site variables use the single resolution-8 cell (about 0.7 km²) that holds the facility point; footprints are not used yet. Each variable's method text says which.
 
-A radius setting offers 1, 3 and 5 miles, close to the 1- and 3-mile rings common in environmental justice screening. Resolution-8 cell centres are about 0.9 km apart, so these correspond to rings of about k = 2, 5 and 9 [verify].
+A radius setting offers 1, 3 and 5 miles, close to the 1- and 3-mile rings common in environmental justice screening. The default is 3 miles.
 
 ## Sources and settings
 
-Three settings sit above the scorecard. Each is a glen-charts `param`, kept in the link and part of every precomputed file name.
+Four settings sit above the scorecard. Each is a glen-charts `param`, kept in the link and part of every precomputed file name.
 
 | Setting | Options | Notes |
 |---|---|---|
 | Source | FracTracker, Epoch AI, PNNL atlas, PNNL projected | One source at a time for now; see Overlap between sources |
 | Status | Proposed, Approved or under construction, Operating or expanding, Suspended or cancelled | FracTracker only (`when` drill-down); multiple choice |
-| Scenario | Growth (low, moderate, high, higher) and market gravity weight (0 to 100) | PNNL projected only; default moderate growth at weight 50 |
+| Growth scenario | Low, moderate, high, higher | PNNL projected only; default moderate, at market gravity weight 50 |
 | Radius | 1, 3 or 5 miles | Slider |
 
 The list of units depends on source and status (`list_params: true`), so the leaderboard ranks only the facilities in view: proposed FracTracker projects are ranked against each other, not against operating campuses, unless the reader chooses both.
 
 ## Map units
 
-glen-charts draws units as polygons (`jur-fill` and `jur-line` layers in `core/map.js`). Facilities are points, so we need one library change: a `boundary.geometry: "point"` option that draws the units as circles, with the same hover, click, selection outline and leaderboard colouring. Following the wetlands README, this goes into glen-charts and not into this repo. Polygon footprints are too small to see at national zoom, so points serve every source.
+No new dataset is needed. Each source's own PMTiles serve as the unit boundaries, keyed by its `_cng_fid`, which the queries also use as the facility id. Two small glen-charts changes (branch `point-units`) make this work:
 
-The boundary tiles come from one harmonised points layer, `public-datacenters/explorer-units.parquet` and `.pmtiles`, built in `boettiger-lab/data-workflows`. It has one row per facility per source, with `id` (unique across sources), `source`, `name`, `status_class`, `operator`, `state`, `county`, `lat`, `lon` and `h8`. The boundary `filter` selects the chosen source and status through param tokens.
+- Point features in boundary tiles are drawn as circles, with the same hover, click, selection ring and leaderboard colouring as polygons. PNNL campuses and projected sites stay polygons.
+- A param option may carry its own `tokens`, so the Source setting switches the tile URL, layer and name field together.
+
+The boundary filter keeps Epoch's US sites and the chosen PNNL growth scenario. FracTracker points are not filtered by status on the map; points outside the leaderboard's view stay grey.
+
+The PNNL atlas source uses its 254 mapped campuses. Its 128 point records are in a separate tile set and are left out of this version.
 
 ## Scoring
 
-Scores follow the wetlands explorer: mid-rank percentiles from 0 to 100 among the facilities in view, and a pillar score that is the weighted mean of its variables' percentiles. The direction is reversed: a higher percentile means greater likely impact or concern. Labels say "impact percentile" so a reader does not assume higher is better.
+Scores follow the wetlands explorer: mid-rank percentiles from 0 to 100 among the facilities in view, and a pillar score that is the weighted mean of its variables' percentiles. The direction is reversed: a higher percentile means greater likely impact or concern. Labels say that a higher percentile means a greater potential impact, so a reader does not assume higher is better.
 
 Each variable is NULL where its source does not record it, and NULL values are left out of the ranking rather than counted as zero. The availability column in the tables below shows which sources carry facility attributes; variables built from context layers are available for every source.
 
@@ -62,31 +67,31 @@ Each variable is NULL where its source does not record it, and NULL values are l
 
 | Variable | Data | Higher percentile when | Available for |
 |---|---|---|---|
-| Power capacity | FracTracker `mw` (697 of 1,733 records), Epoch `current_power_mw` | larger | FracTracker, Epoch |
-| On-site fossil generation | FracTracker `power_source` naming gas, coal or oil, or `dedicated_power_plant` = Yes | present | FracTracker |
-| Backup generators | FracTracker `number_of_generators`; count of Epoch footprint polygons of type Backup generator | more | FracTracker, Epoch |
-| Carbon stored on the site | Conservation International vulnerable carbon 2024 in the facility's own cells | more | all |
+| Power capacity | FracTracker `mw` (589 of 1,733 records give a number), Epoch `current_power_mw`, PNNL projected IT power | larger | FracTracker, Epoch, PNNL projected |
+| Floor area | FracTracker `facility_size_sqft`, PNNL campus `sqft`, PNNL projected campus size | larger | FracTracker, PNNL |
+| Dedicated fossil power reported | FracTracker `power_source` or `dedicated_power_plant` naming gas, coal, oil, diesel, turbines or fracked gas | reported | FracTracker; weight 0, as few records report it |
+| Vulnerable carbon in the site cell | Conservation International vulnerable carbon 2024 | more | all |
 | Cooling energy demand | PNNL `cooling_energy_demand_mwh` | more | PNNL projected |
 
-Grid emissions are missing from the catalog. A facility drawing from a coal-heavy grid has a far larger footprint than one of the same size on a clean grid, so EPA eGRID subregion emission rates are the most important addition for this pillar (see Data gaps). Every PNNL projected site is modelled at 36 MW, so power capacity carries no information there and has weight 0 for that source.
+Grid emissions are missing from the catalog. A facility drawing from a coal-heavy grid has a far larger footprint than one of the same size on a clean grid, so EPA eGRID subregion emission rates are the most important addition for this pillar (see Data gaps). Every PNNL projected site is modelled at 36 MW, so power capacity does not separate them. Backup generators are reported for only 11 FracTracker records, so they are left out.
 
 ## Water
 
 | Variable | Data | Higher percentile when | Available for |
 |---|---|---|---|
-| Water-based cooling | FracTracker `cooling_source` Water or Hybrid; PNNL `cooling_water_consumption_mgy` | water used | FracTracker, PNNL projected |
-| People served by the local water system | EPA community water system service areas containing the facility, `Population_Served_Count` | more | all |
-| Other data centers in the same watershed | count and total power of facilities from the same source in the facility's HUC8 | more | all |
-| Wetland share | NWI wetlands in the radius | higher | all |
-| Flood zone share | FEMA high-risk (A and V) zones in the radius | higher | all |
+| People served by the local water system | The largest EPA community water system whose service area covers the site cell, `Population_Served_Count` | more | all |
+| Other facilities in the same HUC8 subbasin | count of facilities from the same source and status in the site cell's subbasin | more | all |
+| Wetland share of the radius | vegetated NWI wetland (lakes, rivers and ponds left out) | higher | all |
+| Flood zone share of the radius | FEMA special flood hazard areas (A and V zones) | higher | all |
+| Cooling water consumption | PNNL `cooling_water_consumption_mgy` | more | PNNL projected |
 
-The cumulative variable matters because data centers cluster, as in Loudoun County, Virginia: one facility's water draw is modest, but dozens in one watershed are not. Baseline water stress (WRI Aqueduct) is the largest gap in this pillar.
+The cumulative variable matters because data centers cluster, as in Loudoun County, Virginia: one facility's water draw is modest, but dozens in one watershed are not. Only 77 FracTracker records report a cooling source, so cooling is shown in the facility card and not scored. Baseline water stress (WRI Aqueduct) is the largest gap in this pillar.
 
 ## Biodiversity and land
 
 | Variable | Data | Higher percentile when | Area |
 |---|---|---|---|
-| Natural land on the site | NLCD 2024 forest, shrub, grassland and wetland classes (hex fractions) | more natural land | facility cells |
+| Natural land in the site cell | NLCD 2024 forest, shrub, grassland and wetland classes (hex fractions) | more natural land | site cell |
 | Landscape intactness | Global Human Modification | less modified | radius |
 | Threatened species richness | IUCN 2025 combined threatened richness (hex, res 5) | more species | radius |
 | Imperiled species richness | NatureServe MOBI | more species | radius |
@@ -103,12 +108,13 @@ The overview card, the counterpart of the Ramsar card, describes the facility an
 
 ## National aggregates
 
-The whole-region mode (`statewide` in glen-charts, labelled United States) gives national context in two forms:
+The whole-region mode (`statewide` in glen-charts, labelled United States) gives national context. glen-charts runs a theme's per-unit query over the whole region, which these queries cannot do, so `scripts/build-national.py` writes the region's rows instead and the queries are marked `"statewide": false`.
 
-- A national baseline for each variable, such as population-weighted SVI over all US tracts. This appears as a "United States" comparison on every scorecard tile.
-- An aggregate over the facilities in view, such as the number of people living within 3 miles of proposed FracTracker projects, or their mean SVI against the national baseline. This is the national view's headline section, with a chart of facility counts and mean pillar scores by state.
+- The national value of each variable comes from a fixed sample of about 2,000 resolution-8 cells in the contiguous US, scored with the same SQL as the facilities. Composition variables (SVI, people of colour, poverty, income) are weighted by the residents around each sample cell, so they describe the typical US resident; the rest describe a typical place.
+- Its percentile is where that typical value would rank among the facilities in view, so the national scorecard reads as how a typical US location compares with these facilities.
+- The national facility card reports the number of facilities in view, their total reported power capacity and, for FracTracker, how many report community pushback.
 
-The second form needs a theme whose query aggregates over the listed facilities. Whether the current `statewide` mode can show both forms without a library change is the first thing to test.
+A chart of counts and mean scores by state is not built yet.
 
 ## Overlap between sources
 
@@ -130,17 +136,17 @@ These additions to the catalog would most improve the scores, roughly in order:
 3. EIA-860 power plants, to identify new gas plants built to serve data centers.
 4. An archived copy of EPA EJScreen (air toxics, diesel particulates, PM2.5), for pollution burden in the environmental justice pillar.
 
-## Work plan
+## Decisions in the first version
 
-1. Build the harmonised `explorer-units` points layer in data-workflows.
-2. Add point units to glen-charts, and test whether `statewide` can show both forms of national aggregate.
-3. Write `explorer/config` and the theme SQL here, precompute, and serve `/explorer/` from the existing deployment as wetlands-v2 does.
-4. Review the variables, directions and weights with the team. All scores stay marked provisional until then.
+- The radii are 1, 3 and 5 miles, with 3 miles as the default.
+- FracTracker facilities of every status are ranked together by default. The reader can narrow the status, and the scores are then recomputed among those facilities.
+- Residents within the radius counts toward concern, since more people are exposed.
+- Hazard exposure is not scored.
+- Labels say "potential impact" and the intro says the scores describe each facility's setting and reported attributes, not measured impacts.
+- Sparse FracTracker attributes (cooling source, generators, dedicated power, community response) are shown in the facility card and not scored, except a dedicated fossil power flag kept at weight 0.
 
-## Open questions
+## Next steps
 
-- Are 1, 3 and 5 miles the right radii?
-- Should proposed and operating facilities be ranked together by default, or kept apart?
-- Should population count toward concern (more people exposed) or be reported only as context?
-- Should hazard exposure become a scored pillar?
-- Is "impact percentile" the right label, given that the scores measure the setting and reported attributes and are not measured impacts?
+1. Review the variables, directions and weights with the team. All scores stay marked provisional until then.
+2. Add EPA eGRID emission rates and WRI Aqueduct water stress to the catalog, and add them to the climate and water pillars.
+3. Merge the sources into one facility list through a crosswalk built in data-workflows.

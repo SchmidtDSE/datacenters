@@ -111,6 +111,11 @@ data:
         root /usr/share/nginx/html;
         index index.html;
 
+        # The explorer's precomputed JSON
+        gzip on;
+        gzip_types application/json text/css application/javascript;
+        gzip_min_length 1024;
+
         add_header Access-Control-Allow-Origin *;
         add_header Access-Control-Allow-Methods "GET, POST, OPTIONS";
         add_header Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Accept";
@@ -223,6 +228,11 @@ data:
             add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
             add_header Pragma "no-cache";
             add_header Expires "0";
+        }
+
+        # Explorer data changes only on redeploy: let browsers keep it for an hour
+        location /explorer/data/ {
+            add_header Cache-Control "public, max-age=3600";
         }
 
         location /health {

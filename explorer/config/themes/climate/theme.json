@@ -1,0 +1,60 @@
+{
+    "label": "Climate footprint",
+    "color": "#d95f02",
+    "blurb": "How large the facility is, and the carbon stored on its site.",
+    "queries": {
+        "climate": {
+            "file": "climate.sql",
+            "all": "climate-all.sql",
+            "statewide": false,
+            "params": [
+                "source",
+                "status",
+                "growth"
+            ]
+        }
+    },
+    "headlines": [
+        {
+            "query": "climate",
+            "field": "pillar_score",
+            "label": "Provisional climate footprint score",
+            "format": "num1",
+            "note": "Mean of this pillar's variable percentiles among the facilities in view, 0–100"
+        }
+    ],
+    "charts": [
+        {
+            "query": "climate",
+            "title": "Percentile by variable",
+            "subtitle": "Percentiles run from 0 to 100 among the facilities in view, and a higher percentile means a greater potential impact.",
+            "category": "label",
+            "format": "num1",
+            "domain_max": 100,
+            "series": [
+                {
+                    "field": "pct",
+                    "label": "Percentile",
+                    "color": "#d95f02"
+                }
+            ],
+            "label_lines": 2
+        },
+        {
+            "type": "percentile-strip",
+            "title": "Distribution across facilities",
+            "subtitle": "The dot marks this facility's value on the spread of all facilities in view.",
+            "query": "climate",
+            "key": "variable",
+            "label": "label",
+            "value": "value",
+            "format_field": "fmt",
+            "rank_field": "pct",
+            "scale_field": "scale",
+            "peer_label": "facilities",
+            "note": "Provisional scores",
+            "wide": true
+        }
+    ],
+    "method": "Power capacity is FracTracker mw (589 of 1,733 records give a number), Epoch AI current power, or PNNL projected IT power (36 MW for every modelled site, so it does not separate them). Floor area is FracTracker facility_size_sqft, PNNL atlas campus area or PNNL projected campus size. Dedicated fossil power is 1 when a FracTracker record names gas, coal, oil, diesel, turbines or fracked gas in its power source or dedicated power plant, and 0 otherwise, including when nothing is reported; it has weight 0 in the leaderboard because so few records report it. Vulnerable carbon is Conservation International's 2024 vulnerable carbon (Noon et al. 2022, v2 2025) summed over the site cell: carbon likely lost if the land is cleared. Cooling energy demand is PNNL projected only. Grid emissions are not yet included: EPA eGRID emission rates are the largest gap in this pillar. Scores are mid-rank percentiles (0–100) among the facilities in view, with direction applied so a higher percentile means a greater potential impact; tied values share the midpoint of their rank range, and a facility with no value for a variable is left out of that variable's ranking. The pillar score is the plain mean of the variable percentiles. Neighbourhood variables use the H3 res-8 cells (about 0.7 km² each) whose centre lies within the chosen radius of the facility; site variables use the single res-8 cell that holds the facility point. All of this is provisional."
+}

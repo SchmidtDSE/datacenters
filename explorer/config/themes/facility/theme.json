@@ -1,0 +1,104 @@
+{
+    "label": "Facility",
+    "color": "#5b4a3f",
+    "blurb": "What the source reports about this data center. None of this enters a score.",
+    "queries": {
+        "facility": {
+            "file": "facility.sql",
+            "all": "facility-all.sql",
+            "statewide": false,
+            "params": [
+                "source",
+                "status",
+                "growth"
+            ]
+        }
+    },
+    "headlines": [
+        {
+            "query": "facility",
+            "field": "status",
+            "label": "Status",
+            "format": "text",
+            "detail_field": "source",
+            "detail_template": "Reported by {}",
+            "detail_format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "operator",
+            "label": "Operator",
+            "format": "text",
+            "detail_field": "tenant",
+            "detail_template": "Tenant or user: {}",
+            "detail_format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "mw",
+            "label": "Power capacity",
+            "format": "compact",
+            "note": "Megawatts as reported"
+        },
+        {
+            "query": "facility",
+            "field": "county",
+            "label": "County",
+            "format": "text",
+            "detail_field": "state",
+            "detail_template": "{}",
+            "detail_format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "online",
+            "label": "Expected online",
+            "format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "power_source",
+            "label": "Power source",
+            "format": "text",
+            "detail_field": "dedicated_power",
+            "detail_template": "Dedicated power: {}",
+            "detail_format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "cooling",
+            "label": "Cooling",
+            "format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "pushback",
+            "label": "Community pushback",
+            "format": "text",
+            "detail_field": "resistance",
+            "detail_template": "{}",
+            "detail_format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "nda",
+            "label": "Nondisclosure agreement",
+            "format": "text"
+        },
+        {
+            "query": "facility",
+            "field": "actions",
+            "label": "Local moratoriums and restrictions",
+            "format": "text",
+            "note": "FracTracker local actions whose area covers the site"
+        },
+        {
+            "query": "facility",
+            "field": "nearby",
+            "label": "Other sources within 1.5 km",
+            "format": "text",
+            "note": "Possibly the same facility, or a neighbour"
+        }
+    ],
+    "method": "Fields come from the chosen source as published, with FracTracker entries of 'nan' shown as no data. FracTracker's power, size and dates are free text, so a value that is not a plain number shows as no data. Local actions are FracTracker's moratorium and restriction records whose mapped area (county, municipality or township) covers the facility's res-8 cell. Other sources counts records from the other sources within 1.5 km, which may be the same facility listed twice or a neighbouring one."
+}
