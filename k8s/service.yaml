@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: datacenters
+  namespace: schmidtdse
+  labels:
+    app: datacenters
+spec:
+  type: ClusterIP
+  selector:
+    app: datacenters
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: http
