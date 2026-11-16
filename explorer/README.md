@@ -15,6 +15,7 @@ All scores are provisional. They describe each facility's setting and what its s
 | `sql/themes/<t>.sql`, `sql/score.sql` | each pillar's variables, and the shared percentile ranking |
 | `sql/overview/facility.sql` | the facility card |
 | `sql/list.sql` | the facility list |
+| `config/data.html` | the Data tab, above the citations in `data/sources.json` |
 | `data/` | precomputed results that the page reads |
 
 ## Building the data
@@ -30,6 +31,7 @@ npx github:SchmidtDSE/glen-charts#<version> precompute --site explorer lists \
   --param source=all --param status=all --param growth=all --param radius=all
 npx github:SchmidtDSE/glen-charts#<version> precompute --site explorer results \
   --param source=all --param status=all --param growth=all --param radius=all
+npx github:SchmidtDSE/glen-charts#<version> precompute --site explorer sources
 
 # 3. the national view, from a fixed sample of US locations scored with the same SQL
 python3 scripts/build-national.py
