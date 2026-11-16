@@ -40,11 +40,11 @@
     "welcome": {
         "message": "Explore existing, proposed and projected US data centers alongside social vulnerability, income, water and hazard data. Try asking:",
         "examples": [
-            "Show proposed data centers that face community pushback, colored by size class.",
+            "Show only the proposed data centers that face community pushback.",
             "Which states have the most proposed data center capacity in megawatts?",
             "Show local moratoriums and bans on data centers alongside the proposed data centers.",
-            "Map the largest AI data centers and list the ten biggest by power with their owners.",
-            "Show proposed hyperscale and mega campus data centers over social vulnerability by census tract."
+            "List the ten largest AI data centers in the US by power and show them on the map.",
+            "Show proposed hyperscale and mega campus data centers over social vulnerability by county."
         ]
     },
     "links": {
