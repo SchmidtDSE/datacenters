@@ -1,0 +1,1160 @@
+{
+ "generated": "2026-11-16T23:46:45.967Z",
+ "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
+ "datasets": [
+  {
+   "id": "fractracker-data-centers",
+   "prefixes": [
+    "https://s3-west.nrp-nautilus.io/public-datacenters/fractracker/data-centers.pmtiles",
+    "s3://public-datacenters/fractracker/data-centers.parquet"
+   ],
+   "stac": {
+    "id": "fractracker-data-centers",
+    "title": "FracTracker U.S. data centers (1,733 facilities)",
+    "license": "other",
+    "providers": [
+     {
+      "name": "FracTracker Alliance",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.fractracker.org/data-centers/"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor"
+      ],
+      "url": "https://github.com/boettiger-lab/data-workflows"
+     },
+     {
+      "name": "National Research Platform",
+      "roles": [
+       "host"
+      ],
+      "url": "https://nationalresearchplatform.org"
+     }
+    ],
+    "sci:citation": "Data provided by FracTracker Alliance (2026). Accessed via https://www.fractracker.org/data-centers/",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-datacenters/fractracker/data-centers/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.fractracker.org/terms-of-service/",
+      "type": "text/html",
+      "title": "FracTracker Alliance Terms of Service"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.fractracker.org/data-centers/",
+      "type": "text/html",
+      "title": "FracTracker Alliance: U.S. Data Centers Tracker"
+     }
+    ]
+   }
+  },
+  {
+   "id": "epoch-ai-data-centers",
+   "prefixes": [
+    "https://s3-west.nrp-nautilus.io/public-datacenters/epoch/ai-data-centers.pmtiles",
+    "s3://public-datacenters/epoch/ai-data-centers.parquet"
+   ],
+   "stac": {
+    "id": "epoch-ai-data-centers",
+    "title": "Epoch AI data centers (96 sites, global)",
+    "license": "CC-BY-4.0",
+    "providers": [
+     {
+      "name": "Epoch AI",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://epoch.ai/data/ai-data-centers"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor"
+      ],
+      "url": "https://github.com/boettiger-lab/data-workflows"
+     },
+     {
+      "name": "National Research Platform",
+      "roles": [
+       "host"
+      ],
+      "url": "https://nationalresearchplatform.org"
+     }
+    ],
+    "sci:citation": "Epoch AI, 'AI data centers'. Published online at epoch.ai. Retrieved from 'https://epoch.ai/data/ai-data-centers' [online resource]. Accessed 15 November 2026.",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-datacenters/epoch/ai-data-centers/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "type": "text/html",
+      "title": "Creative Commons Attribution 4.0 International"
+     },
+     {
+      "rel": "about",
+      "href": "https://epoch.ai/data/ai-data-centers",
+      "type": "text/html",
+      "title": "Epoch AI: AI data centers"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pnnl-im3-atlas-campus",
+   "prefixes": [
+    "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-campus.pmtiles",
+    "s3://public-datacenters/pnnl-im3/atlas-campus.parquet"
+   ],
+   "stac": {
+    "id": "pnnl-im3-atlas-campus",
+    "title": "IM3 data center atlas: campus outlines (249 campuses)",
+    "license": "ODbL-1.0",
+    "providers": [
+     {
+      "name": "Pacific Northwest National Laboratory (IM3 project)",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://im3.pnnl.gov/datacenter-atlas"
+     },
+     {
+      "name": "OpenStreetMap contributors",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.openstreetmap.org/copyright"
+     },
+     {
+      "name": "MSD-LIVE Data Repository",
+      "roles": [
+       "host"
+      ],
+      "url": "https://data.msdlive.org/records/qxpk8-yae09"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor"
+      ],
+      "url": "https://github.com/boettiger-lab/data-workflows"
+     },
+     {
+      "name": "National Research Platform",
+      "roles": [
+       "host"
+      ],
+      "url": "https://nationalresearchplatform.org"
+     }
+    ],
+    "sci:citation": "Mongird, K., Vernon, C., Burleyson, C., Akdemir, K. Z., & Rice, J. (2026). IM3 Open Source Data Center Atlas (v2026.11.02) [Data set]. MSD-LIVE Data Repository. https://doi.org/10.57931/17054299",
+    "sci:doi": "10.57931/17054299",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-campus/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "type": "text/html",
+      "title": "Open Database License (ODbL) 1.0"
+     },
+     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.57931/17054299",
+      "type": "text/html",
+      "title": "Dataset DOI"
+     },
+     {
+      "rel": "about",
+      "href": "https://im3.pnnl.gov/datacenter-atlas",
+      "type": "text/html",
+      "title": "IM3 Data Center Atlas"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pnnl-im3-projected",
+   "prefixes": [
+    "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/projected.pmtiles",
+    "s3://public-datacenters/pnnl-im3/projected.parquet"
+   ],
+   "stac": {
+    "id": "pnnl-im3-projected",
+    "title": "IM3 projected U.S. data center sites to 2035 (20 growth and market scenarios)",
+    "license": "CC-BY-4.0",
+    "providers": [
+     {
+      "name": "Pacific Northwest National Laboratory (IM3 project)",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://im3.pnnl.gov/datacenter-atlas"
+     },
+     {
+      "name": "MSD-LIVE Data Repository",
+      "roles": [
+       "host"
+      ],
+      "url": "https://data.msdlive.org/records/r0cga-34g05"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor"
+      ],
+      "url": "https://github.com/boettiger-lab/data-workflows"
+     },
+     {
+      "name": "National Research Platform",
+      "roles": [
+       "host"
+      ],
+      "url": "https://nationalresearchplatform.org"
+     }
+    ],
+    "sci:citation": "Mongird, K., Burleyson, C., Akdemir, K. Z., Vernon, C., & Rice, J. (2026). IM3 Projected US Data Center Locations (v1.1) [Data set]. MSD-LIVE Data Repository. https://doi.org/10.57931/3020186",
+    "sci:doi": "10.57931/3020186",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/projected/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "type": "text/html",
+      "title": "Creative Commons Attribution 4.0 International"
+     },
+     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.57931/3020186",
+      "type": "text/html",
+      "title": "Dataset DOI"
+     },
+     {
+      "rel": "about",
+      "href": "https://im3.pnnl.gov/datacenter-atlas",
+      "type": "text/html",
+      "title": "IM3 Data Center Atlas"
+     }
+    ]
+   }
+  },
+  {
+   "id": "census-2024-county",
+   "prefixes": [
+    "s3://public-census/census-2024/county/hex"
+   ],
+   "stac": {
+    "id": "census-2024-county",
+    "title": "US Census 2024 County Boundaries with H3 Indexing",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "US Census Bureau",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/tiger-geo-line.html"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "title": "U.S. Government Works"
+     }
+    ]
+   }
+  },
+  {
+   "id": "census-2024-state",
+   "prefixes": [
+    "s3://public-census/census-2024/state/hex"
+   ],
+   "stac": {
+    "id": "census-2024-state",
+    "title": "US Census 2024 State Boundaries with H3 Indexing",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "US Census Bureau",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-census/census-2024/state/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/tiger-geo-line.html",
+      "title": "TIGER/Line Technical Documentation"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "title": "U.S. Government Works"
+     }
+    ]
+   }
+  },
+  {
+   "id": "fractracker-moratoriums",
+   "prefixes": [
+    "s3://public-datacenters/fractracker/moratoriums/hex"
+   ],
+   "stac": {
+    "id": "fractracker-moratoriums",
+    "title": "FracTracker data center moratoriums and local actions (841 records in 48 states)",
+    "license": "other",
+    "providers": [
+     {
+      "name": "FracTracker Alliance",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.fractracker.org/data-centers/"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor"
+      ],
+      "url": "https://github.com/boettiger-lab/data-workflows"
+     },
+     {
+      "name": "National Research Platform",
+      "roles": [
+       "host"
+      ],
+      "url": "https://nationalresearchplatform.org"
+     }
+    ],
+    "sci:citation": "Data provided by FracTracker Alliance (2026). Accessed via https://www.fractracker.org/data-centers/",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-datacenters/fractracker/moratoriums/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.fractracker.org/terms-of-service/",
+      "type": "text/html",
+      "title": "FracTracker Alliance Terms of Service"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.fractracker.org/data-centers/",
+      "type": "text/html",
+      "title": "FracTracker Alliance: U.S. Data Centers Tracker"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pnnl-im3-atlas-point",
+   "prefixes": [
+    "s3://public-datacenters/pnnl-im3/atlas-point.parquet"
+   ],
+   "stac": {
+    "id": "pnnl-im3-atlas-point",
+    "title": "IM3 data center atlas: facility points (128 facilities)",
+    "license": "ODbL-1.0",
+    "providers": [
+     {
+      "name": "Pacific Northwest National Laboratory (IM3 project)",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://im3.pnnl.gov/datacenter-atlas"
+     },
+     {
+      "name": "OpenStreetMap contributors",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.openstreetmap.org/copyright"
+     },
+     {
+      "name": "MSD-LIVE Data Repository",
+      "roles": [
+       "host"
+      ],
+      "url": "https://data.msdlive.org/records/qxpk8-yae09"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor"
+      ],
+      "url": "https://github.com/boettiger-lab/data-workflows"
+     },
+     {
+      "name": "National Research Platform",
+      "roles": [
+       "host"
+      ],
+      "url": "https://nationalresearchplatform.org"
+     }
+    ],
+    "sci:citation": "Mongird, K., Vernon, C., Burleyson, C., Akdemir, K. Z., & Rice, J. (2026). IM3 Open Source Data Center Atlas (v2026.11.02) [Data set]. MSD-LIVE Data Repository. https://doi.org/10.57931/17054299",
+    "sci:doi": "10.57931/17054299",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-point/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "type": "text/html",
+      "title": "Open Database License (ODbL) 1.0"
+     },
+     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.57931/17054299",
+      "type": "text/html",
+      "title": "Dataset DOI"
+     },
+     {
+      "rel": "about",
+      "href": "https://im3.pnnl.gov/datacenter-atlas",
+      "type": "text/html",
+      "title": "IM3 Data Center Atlas"
+     }
+    ]
+   }
+  },
+  {
+   "id": "ghs-pop-2020",
+   "prefixes": [
+    "s3://public-population/ghs-pop-2020/hex"
+   ],
+   "stac": {
+    "id": "ghs-pop-2020",
+    "title": "GHS-POP 2020 Global Population (R2023A, 3 arc-second)",
+    "license": "CC-BY-4.0",
+    "providers": [
+     {
+      "name": "European Commission Joint Research Centre (JRC)",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://human-settlement.emergency.copernicus.eu"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://boettiger-lab.github.io"
+     }
+    ],
+    "sci:citation": "Schiavina M., Freire S., Carioli A., MacManus K. (2023): GHS-POP R2023A - GHS population grid multitemporal (1975-2030). European Commission, Joint Research Centre (JRC). doi:10.2905/2FF68A52-5B5B-4A22-8F40-C41DA8332CFE",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-population/ghs-pop-2020/stac-collection.json",
+      "type": "application/json"
+     }
+    ]
+   }
+  },
+  {
+   "id": "svi-2022",
+   "prefixes": [
+    "s3://public-social-vulnerability/svi-2022-tract/hex"
+   ],
+   "stac": {
+    "id": "svi-2022",
+    "title": "CDC Social Vulnerability Index 2022",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "CDC/ATSDR",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.atsdr.cdc.gov/placeandhealth/svi/"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "title": "U.S. Government Works"
+     }
+    ]
+   }
+  },
+  {
+   "id": "acs-2020-2024-blockgroup",
+   "prefixes": [
+    "s3://public-census/acs-2020-2024/blockgroup/hex"
+   ],
+   "stac": {
+    "id": "acs-2020-2024-blockgroup",
+    "title": "ACS 2020–2024 Block-Group Demographics (with H3 Indexing)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "US Census Bureau",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.census.gov/programs-surveys/acs"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-census/acs-2020-2024/blockgroup/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.census.gov/data/developers/about/terms-of-service.html",
+      "type": "text/html"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mappinginequality",
+   "prefixes": [
+    "s3://public-mappinginequality/hex"
+   ],
+   "stac": {
+    "id": "mappinginequality",
+    "title": "Mapping Inequality: Redlining in New Deal America",
+    "license": "CC-BY-NC-SA-4.0",
+    "providers": [
+     {
+      "name": "Digital Scholarship Lab, University of Richmond",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://dsl.richmond.edu/panorama/redlining/"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-mappinginequality/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "title": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+     }
+    ]
+   }
+  },
+  {
+   "id": "irrecoverable-carbon",
+   "prefixes": [
+    "s3://public-carbon/vulnerable-carbon-2024/hex"
+   ],
+   "stac": {
+    "id": "irrecoverable-carbon",
+    "title": "Irrecoverable Earth: Carbon Reserves (v2, 2025 release)",
+    "license": "CC-BY-NC-4.0",
+    "providers": [
+     {
+      "name": "Conservation International",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.conservation.org/"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.conservation.org/irrecoverable-carbon",
+      "title": "Conservation International - Irrecoverable Carbon Project"
+     },
+     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.1038/s41893-021-00803-6",
+      "title": "Noon et al. (2022) Nature Sustainability"
+     },
+     {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "title": "Creative Commons Attribution-NonCommercial 4.0 International"
+     }
+    ]
+   }
+  },
+  {
+   "id": "epa-sab-v3-cws",
+   "prefixes": [
+    "s3://public-epa-water/epa-sab-v3/cws/hex"
+   ],
+   "stac": {
+    "id": "epa-sab-v3-cws",
+    "title": "EPA Community Water System Service Area Boundaries (v3)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "U.S. Environmental Protection Agency, Office of Research and Development",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.epa.gov/ground-water-and-drinking-water/community-water-system-service-area-boundaries"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-epa-water/epa-sab-v3/cws/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "title": "EPA Community Water System Service Area Boundaries — landing page",
+      "href": "https://www.epa.gov/ground-water-and-drinking-water/community-water-system-service-area-boundaries"
+     },
+     {
+      "rel": "about",
+      "title": "EPA SAB v3 fact sheet",
+      "href": "https://www.epa.gov/system/files/documents/2025-09/epa-cws-sab-fact-sheet.pdf"
+     },
+     {
+      "rel": "about",
+      "title": "EPA CWS SAB data standard (October 2024)",
+      "href": "https://www.epa.gov/system/files/documents/2024-04/cws-service-area-boundaries-data-standard.pdf"
+     }
+    ]
+   }
+  },
+  {
+   "id": "usgs-wbd-hu12",
+   "prefixes": [
+    "s3://public-usgs-wbd/wbd/hu12/hex"
+   ],
+   "stac": {
+    "id": "usgs-wbd-hu12",
+    "title": "USGS WBD — HUC12 Subwatersheds (national)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "U.S. Geological Survey",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.usgs.gov/national-hydrography/watershed-boundary-dataset"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu12/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.usgs.gov/national-hydrography/watershed-boundary-dataset",
+      "title": "USGS Watershed Boundary Dataset"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "title": "USGS Public Domain",
+      "type": "text/html"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wetlands-nwi",
+   "prefixes": [
+    "s3://public-wetlands/nwi-v2/hex"
+   ],
+   "stac": {
+    "id": "wetlands-nwi",
+    "title": "US National Wetlands Inventory (NWI)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "U.S. Fish & Wildlife Service",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.fws.gov/program/national-wetlands-inventory"
+     },
+     {
+      "name": "Source Cooperative (giswqs)",
+      "roles": [
+       "host"
+      ],
+      "url": "https://data.source.coop/giswqs/nwi/"
+     },
+     {
+      "name": "Boettiger Lab, UC Berkeley",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "sci:citation": "U.S. Fish & Wildlife Service, National Wetlands Inventory (product line \"NWI Version 2\"). Accessed 2026-05-12 via the Source Cooperative mirror data.source.coop/giswqs/nwi/wetlands/. Upstream edition not determinable: FWS republishes in place biannually with no dated archive. Processed to EPSG:4326 GeoParquet, PMTiles and H3 by the Boettiger Lab, UC Berkeley.",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-wetlands/nwi/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.fws.gov/program/national-wetlands-inventory",
+      "type": "text/html",
+      "title": "NWI official product page (USFWS)"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "type": "text/html"
+     }
+    ]
+   }
+  },
+  {
+   "id": "flood-hazard",
+   "prefixes": [
+    "s3://public-hazard/flood-hazard/hex"
+   ],
+   "stac": {
+    "id": "flood-hazard",
+    "title": "FEMA National Flood Hazard Layer — Flood Hazard Zones (National)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "FEMA — Federal Emergency Management Agency",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.fema.gov/flood-maps/national-flood-hazard-layer"
+     },
+     {
+      "name": "NRP / boettiger-lab",
+      "roles": [
+       "processor",
+       "host"
+      ]
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-hazard/flood-hazard/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.fema.gov/flood-maps/national-flood-hazard-layer",
+      "type": "text/html"
+     }
+    ]
+   }
+  },
+  {
+   "id": "nlcd",
+   "prefixes": [
+    "s3://public-land-cover/nlcd/hex-fractions"
+   ],
+   "stac": {
+    "id": "nlcd",
+    "title": "Annual NLCD Land Cover & Land-Cover Change, CONUS 1985-2025 (Collection 1.2)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "Multi-Resolution Land Characteristics (MRLC) Consortium / USGS EROS",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.mrlc.gov/data/project/annual-nlcd"
+     },
+     {
+      "name": "Boettiger Lab (cng-datasets H3 processing)",
+      "roles": [
+       "processor"
+      ],
+      "url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd/"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "type": "text/html",
+      "title": "USGS copyrights and credits (public domain)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "global-human-modification",
+   "prefixes": [
+    "s3://public-human-modification/ghm/hex"
+   ],
+   "stac": {
+    "id": "global-human-modification",
+    "title": "Global Human Modification (gHM)",
+    "license": "CC-BY-4.0",
+    "providers": [
+     {
+      "name": "David M. Theobald et al.",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://doi.org/10.6084/m9.figshare.7283087"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://s3-west.nrp-nautilus.io/public-human-modification/"
+     }
+    ],
+    "sci:doi": "10.6084/m9.figshare.7283087",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-human-modification/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "type": "text/html",
+      "title": "CC BY 4.0"
+     },
+     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.6084/m9.figshare.7283087"
+     }
+    ]
+   }
+  },
+  {
+   "id": "iucn-richness-2025",
+   "prefixes": [
+    "s3://public-iucn/hex/combined_thr_sr"
+   ],
+   "stac": {
+    "id": "iucn-richness-2025",
+    "title": "IUCN Species Richness 2025",
+    "license": "proprietary",
+    "providers": [
+     {
+      "name": "IUCN Red List",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.iucnredlist.org/"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-iucn/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.iucnredlist.org/terms/terms-of-use",
+      "title": "IUCN Red List Terms of Use"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mobi-species-richness-all",
+   "prefixes": [
+    "s3://public-mobi/mobi-species-richness-all/hex"
+   ],
+   "stac": {
+    "id": "mobi-species-richness-all",
+    "title": "MOBI Species Richness (All Taxa)",
+    "license": "CC-BY-NC-4.0",
+    "providers": [
+     {
+      "name": "NatureServe",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.natureserve.org/map-biodiversity-importance"
+     },
+     {
+      "name": "Esri",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.esri.com"
+     },
+     {
+      "name": "The Nature Conservancy",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.nature.org"
+     },
+     {
+      "name": "Boettiger Lab / ESPM, UC Berkeley",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://boettiger-lab.github.io"
+     }
+    ],
+    "sci:citation": "Hamilton, H., Smyth, R. L., Young, B. E., Howard, T. G., Tracey, C., Breyer, S., Cameron, D. R., Chazal, A., Conley, A. K., Frye, C., & Schloss, C. (2022). Increasing taxonomic diversity and spatial resolution clarifies opportunities for protecting US imperiled species. Ecological Applications, 32(3), e2534. https://doi.org/10.1002/eap.2534",
+    "sci:doi": "10.1002/eap.2534",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "title": "Creative Commons Attribution-NonCommercial 4.0 International"
+     }
+    ]
+   }
+  },
+  {
+   "id": "usfws-critical-habitat-final",
+   "prefixes": [
+    "s3://public-usfws/critical-habitat/final/hex"
+   ],
+   "stac": {
+    "id": "usfws-critical-habitat-final",
+    "title": "USFWS Critical Habitat — (-179.14643, 13.639711, 179.776432, 74.024895) (Polygon Features)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "U.S. Fish and Wildlife Service (USFWS)",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.fws.gov/program/endangered-species"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://boettigerlab.berkeley.edu"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json",
+      "type": "application/json"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pad-us-4.1-fee",
+   "prefixes": [
+    "s3://public-padus/padus-4-1/fee/hex"
+   ],
+   "stac": {
+    "id": "pad-us-4.1-fee",
+    "title": "PAD-US 4.1 Fee - Fee-Owned Protected Areas",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "USGS Gap Analysis Project",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.usgs.gov/programs/gap-analysis-project"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://github.com/boettiger-lab"
+     }
+    ],
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5066/P96WBCHS",
+      "title": "PAD-US 4.1 DOI"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview",
+      "title": "PAD-US Data Overview"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "title": "U.S. Government Works"
+     }
+    ]
+   }
+  }
+ ]
+}

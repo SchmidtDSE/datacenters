@@ -52,6 +52,42 @@
         "docs": "https://schmidtdse.github.io/glen/",
         "carbon": true
     },
+    "header": {
+        "nav": [
+            {
+                "label": "About",
+                "href": "https://schmidtdse.github.io/glen/",
+                "icon": "info"
+            },
+            {
+                "label": "Data",
+                "href": "#data",
+                "icon": "database",
+                "external": false
+            },
+            {
+                "label": "Explorer",
+                "href": "/explorer/",
+                "external": false
+            },
+            {
+                "label": "GitHub",
+                "href": "https://github.com/SchmidtDSE/datacenters",
+                "icon": "github"
+            },
+            {
+                "label": "Carbon",
+                "href": "https://carbon-api.nrp-nautilus.io/",
+                "icon": "leaf"
+            },
+            {
+                "label": "Contact us",
+                "href": "mailto:dse@berkeley.edu",
+                "icon": "mail",
+                "external": false
+            }
+        ]
+    },
     "collections": [
         {
             "collection_id": "fractracker-data-centers",
