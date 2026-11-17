@@ -423,6 +423,21 @@ for cid, path, asset, name, color, width, tips in [
                     "tooltip_fields": tips}],
     })
 
+# glen draws collections in config order, the first at the bottom of the map. Raster and area
+# fills go first, boundary outlines and local actions above them, and data center points last
+# so no layer covers them.
+DRAW_ORDER = [
+    "nlcd", "pad-us-4.1-fee", "usfws-critical-habitat-final", "sea-level-rise", "flood-hazard",
+    "wetlands-nwi", "usgs-wbd-hu8", "epa-sab-v3-cws", "ghs-pop-2020", "mappinginequality",
+    "acs-2020-2024-blockgroup", "svi-2022",
+    "census-2024-tract", "census-2024-county", "census-2024-state",
+    "fractracker-moratoriums", "pnnl-im3-projected",
+    "pnnl-im3-atlas-campus", "pnnl-im3-atlas-building", "epoch-ai-data-center-footprints",
+    "pnnl-im3-atlas-point", "epoch-ai-data-centers", "fractracker-data-centers",
+]
+assert sorted(DRAW_ORDER) == sorted(c["collection_id"] for c in collections), "update DRAW_ORDER"
+collections.sort(key=lambda c: DRAW_ORDER.index(c["collection_id"]))
+
 config = {
     "catalog": f"{S3}/public-data/stac/catalog.json",
     "titiler_url": "https://titiler.nrp-nautilus.io",

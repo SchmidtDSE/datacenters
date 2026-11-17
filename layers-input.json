@@ -91,198 +91,610 @@
     },
     "collections": [
         {
-            "collection_id": "fractracker-data-centers",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/fractracker/data-centers/stac-collection.json",
+            "collection_id": "nlcd",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd/stac-collection.json",
             "assets": [
                 {
-                    "id": "data-centers-pmtiles",
-                    "display_name": "Existing and proposed data centers",
-                    "group": "Data centers",
-                    "visible": true,
-                    "layer_type": "circle",
-                    "default_style": {
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "status"
-                            ],
-                            "Proposed",
-                            "#E6550D",
-                            "Pre-proposal",
-                            "#FDAE6B",
-                            "Approved/Permitted/Under construction",
-                            "#FFD92F",
-                            "Operating",
-                            "#3182BD",
-                            "Expanding",
-                            "#6BAED6",
-                            "Suspended",
-                            "#969696",
-                            "Cancelled",
-                            "#525252",
-                            "#cccccc"
-                        ],
-                        "circle-radius": 4.5,
-                        "circle-stroke-color": "#ffffff",
-                        "circle-stroke-width": 0.6
-                    },
-                    "tooltip_fields": [
-                        "facility_name",
-                        "status",
-                        "operator_name",
-                        "mw",
-                        "sizerank",
-                        "community_pushback",
-                        "city",
-                        "state"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Proposed",
-                            "color": "#E6550D"
-                        },
-                        {
-                            "label": "Pre-proposal",
-                            "color": "#FDAE6B"
-                        },
-                        {
-                            "label": "Approved/Permitted/Under construction",
-                            "color": "#FFD92F"
-                        },
-                        {
-                            "label": "Operating",
-                            "color": "#3182BD"
-                        },
-                        {
-                            "label": "Expanding",
-                            "color": "#6BAED6"
-                        },
-                        {
-                            "label": "Suspended",
-                            "color": "#969696"
-                        },
-                        {
-                            "label": "Cancelled",
-                            "color": "#525252"
-                        }
-                    ]
+                    "id": "nlcd-cog-2024",
+                    "display_name": "Land cover in 2024",
+                    "group": "Land and habitat",
+                    "legend_type": "categorical"
                 }
             ]
         },
         {
-            "collection_id": "epoch-ai-data-centers",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/epoch/ai-data-centers/stac-collection.json",
+            "collection_id": "pad-us-4.1-fee",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
             "assets": [
                 {
-                    "id": "ai-data-centers-pmtiles",
-                    "display_name": "Large AI data centers",
-                    "group": "Data centers",
-                    "visible": false,
-                    "layer_type": "circle",
-                    "default_style": {
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "owner_name"
-                            ],
-                            "Google",
-                            "#EA8D00",
-                            "Meta",
-                            "#0058DC",
-                            "Microsoft",
-                            "#009AF1",
-                            "Amazon",
-                            "#FC6538",
-                            "CoreWeave",
-                            "#279E27",
-                            "Oracle",
-                            "#E03D90",
-                            "SpaceXAI",
-                            "#6A3ECB",
-                            "#bdbdbd"
-                        ],
-                        "circle-radius": 6,
-                        "circle-stroke-color": "#222222",
-                        "circle-stroke-width": 0.8
-                    },
-                    "tooltip_fields": [
-                        "name",
-                        "owner_name",
-                        "current_power_mw",
-                        "current_h100_equivalents",
-                        "operational",
-                        "state"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Google",
-                            "color": "#EA8D00"
-                        },
-                        {
-                            "label": "Meta",
-                            "color": "#0058DC"
-                        },
-                        {
-                            "label": "Microsoft",
-                            "color": "#009AF1"
-                        },
-                        {
-                            "label": "Amazon",
-                            "color": "#FC6538"
-                        },
-                        {
-                            "label": "CoreWeave",
-                            "color": "#279E27"
-                        },
-                        {
-                            "label": "Oracle",
-                            "color": "#E03D90"
-                        },
-                        {
-                            "label": "SpaceXAI",
-                            "color": "#6A3ECB"
-                        },
-                        {
-                            "label": "Other owner",
-                            "color": "#bdbdbd"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "epoch-ai-data-center-footprints",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/epoch/ai-data-center-footprints/stac-collection.json",
-            "assets": [
-                {
-                    "id": "ai-data-center-footprints-pmtiles",
-                    "display_name": "AI data center footprints",
-                    "group": "Data centers",
+                    "id": "fee-pmtiles",
+                    "display_name": "Protected areas",
+                    "group": "Land and habitat",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
                             "match",
                             [
                                 "get",
-                                "feature_type"
+                                "GAP_Sts"
                             ],
-                            "Building",
-                            "#5f5f5f",
-                            "Cooling",
-                            "#1f78b4",
-                            "Backup generator",
-                            "#6a3d9a",
-                            "Power substation",
-                            "#ff7f00",
-                            "Power generator",
-                            "#d01c8b",
+                            "1",
+                            "#26633A",
+                            "2",
+                            "#3E9C47",
+                            "3",
+                            "#7EB3D3",
+                            "4",
+                            "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.6
+                    },
+                    "tooltip_fields": [
+                        "Unit_Nm",
+                        "GAP_Sts",
+                        "Mang_Type"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "GAP 1 managed for biodiversity",
+                            "color": "#26633A"
+                        },
+                        {
+                            "label": "GAP 2 managed with some extractive use",
+                            "color": "#3E9C47"
+                        },
+                        {
+                            "label": "GAP 3 multiple use",
+                            "color": "#7EB3D3"
+                        },
+                        {
+                            "label": "GAP 4 no known mandate",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usfws-critical-habitat-final",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json",
+            "assets": [
+                {
+                    "id": "final-pmtiles",
+                    "display_name": "Critical habitat",
+                    "group": "Land and habitat",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#AD1457",
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#880E4F",
+                        "line-width": 0.5,
+                        "line-opacity": 0.7
+                    },
+                    "tooltip_fields": [
+                        "comname",
+                        "sciname",
+                        "unitname",
+                        "status"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "sea-level-rise",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-hazard/sea-level-rise/stac-collection.json",
+            "assets": [
+                {
+                    "id": "sea-level-rise-pmtiles",
+                    "display_name": "Sea level rise of 5 feet",
+                    "group": "Hazards",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#01579B",
+                        "fill-opacity": 0.55
+                    },
+                    "tooltip_fields": [
+                        "state",
+                        "region",
+                        "slr_ft"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "flood-hazard",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-hazard/flood-hazard/stac-collection.json",
+            "assets": [
+                {
+                    "id": "flood-hazard-pmtiles",
+                    "display_name": "Flood hazard zones",
+                    "group": "Hazards",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "FLD_ZONE"
+                            ],
+                            "A",
+                            "#0D47A1",
+                            "AE",
+                            "#0D47A1",
+                            "AH",
+                            "#1565C0",
+                            "AO",
+                            "#1565C0",
+                            "A99",
+                            "#1565C0",
+                            "V",
+                            "#B71C1C",
+                            "VE",
+                            "#B71C1C",
+                            "X",
+                            "#90CAF9",
+                            "#B0BEC5"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "tooltip_fields": [
+                        "FLD_ZONE",
+                        "ZONE_SUBTY",
+                        "SFHA_TF"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "High risk A and AE",
+                            "color": "#0D47A1"
+                        },
+                        {
+                            "label": "Coastal high hazard V and VE",
+                            "color": "#B71C1C"
+                        },
+                        {
+                            "label": "Minimal risk X",
+                            "color": "#90CAF9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "wetlands-nwi",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/nwi/stac-collection.json",
+            "assets": [
+                {
+                    "id": "nwi-pmtiles",
+                    "display_name": "Wetlands",
+                    "group": "Water",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "WETLAND_TYPE"
+                            ],
+                            "Freshwater Emergent Wetland",
+                            "#66C2A5",
+                            "Freshwater Forested/Shrub Wetland",
+                            "#1B7837",
+                            "Freshwater Pond",
+                            "#41B6C4",
+                            "Lake",
+                            "#225EA8",
+                            "Riverine",
+                            "#7FCDBB",
+                            "Estuarine and Marine Wetland",
+                            "#8C6BB1",
+                            "Estuarine and Marine Deepwater",
+                            "#4D004B",
+                            "#969696"
+                        ],
+                        "fill-opacity": 0.7
+                    },
+                    "tooltip_fields": [
+                        "WETLAND_TYPE",
+                        "ATTRIBUTE",
+                        "state_code"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-wbd-hu8",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu8/stac-collection.json",
+            "assets": [
+                {
+                    "id": "hu8-pmtiles",
+                    "display_name": "Watersheds",
+                    "group": "Water",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#0277BD",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#0277BD",
+                        "line-width": 0.7,
+                        "line-opacity": 0.6
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "huc8",
+                        "areasqkm",
+                        "states"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "epa-sab-v3-cws",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-epa-water/epa-sab-v3/cws/stac-collection.json",
+            "assets": [
+                {
+                    "id": "sab-cws-pmtiles",
+                    "display_name": "Community water system service areas",
+                    "group": "Water",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#5C6BC0",
+                        "fill-opacity": 0.3
+                    },
+                    "outline_style": {
+                        "line-color": "#283593",
+                        "line-width": 0.4,
+                        "line-opacity": 0.6
+                    },
+                    "tooltip_fields": [
+                        "PWS_Name",
+                        "PWSID",
+                        "Population_Served_Count",
+                        "Service_Area_Type"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "ghs-pop-2020",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-population/ghs-pop-2020/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ghs-pop-2020-cog",
+                    "display_name": "Population density in 2020",
+                    "group": "Equity",
+                    "visible": false,
+                    "colormap": "magma",
+                    "rescale": "0,200",
+                    "nodata": 0,
+                    "legend_label": "People per 90 m cell"
+                }
+            ]
+        },
+        {
+            "collection_id": "mappinginequality",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-mappinginequality/stac-collection.json",
+            "assets": [
+                {
+                    "id": "mappinginequality-pmtiles",
+                    "display_name": "Historical redlining grades",
+                    "group": "Equity",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "grade"
+                            ],
+                            "A",
+                            "#76A865",
+                            "B",
+                            "#7CB5BD",
+                            "C",
+                            "#F0DE6C",
+                            "D",
+                            "#D9838D",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.7
+                    },
+                    "tooltip_fields": [
+                        "grade",
+                        "city",
+                        "label",
+                        "category"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "A Best",
+                            "color": "#76A865"
+                        },
+                        {
+                            "label": "B Still desirable",
+                            "color": "#7CB5BD"
+                        },
+                        {
+                            "label": "C Definitely declining",
+                            "color": "#F0DE6C"
+                        },
+                        {
+                            "label": "D Hazardous",
+                            "color": "#D9838D"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "acs-2020-2024-blockgroup",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/acs-2020-2024/blockgroup/stac-collection.json",
+            "assets": [
+                {
+                    "id": "blockgroup-pmtiles",
+                    "display_name": "Median household income by block group",
+                    "group": "Equity",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "typeof",
+                                    [
+                                        "get",
+                                        "MHHI"
+                                    ]
+                                ],
+                                "number"
+                            ],
+                            [
+                                "interpolate",
+                                [
+                                    "linear"
+                                ],
+                                [
+                                    "get",
+                                    "MHHI"
+                                ],
+                                40000,
+                                "#D7191C",
+                                75000,
+                                "#FDAE61",
+                                101550,
+                                "#FFFFBF",
+                                150000,
+                                "#A6D96A",
+                                200000,
+                                "#1A9641"
+                            ],
                             "#cccccc"
                         ],
-                        "fill-opacity": 0.75
+                        "fill-opacity": 0.65
+                    },
+                    "tooltip_fields": [
+                        "NAMELSAD",
+                        "GEOID",
+                        "MHHI",
+                        "TotPop",
+                        "PovInd",
+                        "NoCar"
+                    ],
+                    "legend_type": "continuous",
+                    "legend_label": "Median household income in dollars"
+                }
+            ]
+        },
+        {
+            "collection_id": "svi-2022",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
+            "assets": [
+                {
+                    "id": "tract-pmtiles",
+                    "display_name": "Social vulnerability by tract",
+                    "group": "Equity",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "interpolate",
+                            [
+                                "linear"
+                            ],
+                            [
+                                "get",
+                                "RPL_THEMES"
+                            ],
+                            0,
+                            "#ffffcc",
+                            0.5,
+                            "#fd8d3c",
+                            1,
+                            "#bd0026"
+                        ],
+                        "fill-opacity": 0.65
+                    },
+                    "default_filter": [
+                        ">=",
+                        [
+                            "get",
+                            "RPL_THEMES"
+                        ],
+                        0
+                    ],
+                    "tooltip_fields": [
+                        "COUNTY",
+                        "ST_ABBR",
+                        "FIPS",
+                        "RPL_THEMES"
+                    ],
+                    "legend_type": "continuous",
+                    "legend_label": "SVI percentile"
+                },
+                {
+                    "id": "county-pmtiles",
+                    "display_name": "Social vulnerability by county",
+                    "group": "Equity",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "interpolate",
+                            [
+                                "linear"
+                            ],
+                            [
+                                "get",
+                                "RPL_THEMES"
+                            ],
+                            0,
+                            "#ffffcc",
+                            0.5,
+                            "#fd8d3c",
+                            1,
+                            "#bd0026"
+                        ],
+                        "fill-opacity": 0.65
+                    },
+                    "default_filter": [
+                        ">=",
+                        [
+                            "get",
+                            "RPL_THEMES"
+                        ],
+                        0
+                    ],
+                    "tooltip_fields": [
+                        "COUNTY",
+                        "ST_ABBR",
+                        "RPL_THEMES"
+                    ],
+                    "legend_type": "continuous",
+                    "legend_label": "SVI percentile"
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-tract",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/tract/stac-collection.json",
+            "group": {
+                "name": "Boundaries",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "tract-pmtiles",
+                    "display_name": "Census tracts",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.25,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": [
+                        "NAMELSAD",
+                        "GEOID",
+                        "COUNTYFP"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-county",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json",
+            "group": {
+                "name": "Boundaries",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "county-pmtiles",
+                    "display_name": "Counties",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.4,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": [
+                        "NAMELSAD",
+                        "STATEFP",
+                        "GEOID"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "census-2024-state",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/state/stac-collection.json",
+            "group": {
+                "name": "Boundaries",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "state-pmtiles",
+                    "display_name": "States",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.03
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.8,
+                        "line-opacity": 0.5
+                    },
+                    "tooltip_fields": [
+                        "NAME",
+                        "STUSPS",
+                        "GEOID"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "fractracker-moratoriums",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/fractracker/moratoriums/stac-collection.json",
+            "assets": [
+                {
+                    "id": "moratoriums-pmtiles",
+                    "display_name": "Local moratoriums and restrictions",
+                    "group": "Projections and local actions",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "action"
+                            ],
+                            "Moratorium",
+                            "#E6550D",
+                            "Ban",
+                            "#A50F15",
+                            "Zoning restriction",
+                            "#3182BD",
+                            "Curative Amendment",
+                            "#756BB1",
+                            "Other",
+                            "#969696",
+                            "#cccccc"
+                        ],
+                        "fill-opacity": 0.45
                     },
                     "outline_style": {
                         "line-color": "#4d4d4d",
@@ -290,114 +702,35 @@
                         "line-opacity": 0.6
                     },
                     "tooltip_fields": [
-                        "data_center",
-                        "feature_type",
-                        "building_label",
-                        "start_date"
+                        "jurisdiction",
+                        "state",
+                        "action",
+                        "status",
+                        "date_enacted",
+                        "expiration_date"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Building",
-                            "color": "#5f5f5f"
+                            "label": "Moratorium",
+                            "color": "#E6550D"
                         },
                         {
-                            "label": "Cooling",
-                            "color": "#1f78b4"
+                            "label": "Ban",
+                            "color": "#A50F15"
                         },
                         {
-                            "label": "Backup generator",
-                            "color": "#6a3d9a"
+                            "label": "Zoning restriction",
+                            "color": "#3182BD"
                         },
                         {
-                            "label": "Power substation",
-                            "color": "#ff7f00"
+                            "label": "Curative Amendment",
+                            "color": "#756BB1"
                         },
                         {
-                            "label": "Power generator",
-                            "color": "#d01c8b"
+                            "label": "Other",
+                            "color": "#969696"
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "pnnl-im3-atlas-campus",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-campus/stac-collection.json",
-            "assets": [
-                {
-                    "id": "atlas-campus-pmtiles",
-                    "display_name": "Mapped data center campuses",
-                    "group": "Data centers",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#08519C",
-                        "fill-opacity": 0.35
-                    },
-                    "outline_style": {
-                        "line-color": "#08306B",
-                        "line-width": 0.8,
-                        "line-opacity": 0.9
-                    },
-                    "tooltip_fields": [
-                        "name",
-                        "operator",
-                        "sqft",
-                        "county",
-                        "state_abb"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "pnnl-im3-atlas-building",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-building/stac-collection.json",
-            "assets": [
-                {
-                    "id": "atlas-building-pmtiles",
-                    "display_name": "Mapped data center buildings",
-                    "group": "Data centers",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#3182BD",
-                        "fill-opacity": 0.6
-                    },
-                    "outline_style": {
-                        "line-color": "#08519C",
-                        "line-width": 0.6,
-                        "line-opacity": 0.9
-                    },
-                    "tooltip_fields": [
-                        "name",
-                        "operator",
-                        "sqft",
-                        "county",
-                        "state_abb"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "pnnl-im3-atlas-point",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-point/stac-collection.json",
-            "assets": [
-                {
-                    "id": "atlas-point-pmtiles",
-                    "display_name": "Mapped data center points",
-                    "group": "Data centers",
-                    "visible": false,
-                    "layer_type": "circle",
-                    "default_style": {
-                        "circle-color": "#3182BD",
-                        "circle-radius": 4,
-                        "circle-stroke-color": "#ffffff",
-                        "circle-stroke-width": 0.6
-                    },
-                    "tooltip_fields": [
-                        "name",
-                        "operator",
-                        "county",
-                        "state_abb"
                     ]
                 }
             ]
@@ -492,34 +825,90 @@
             "group": "Projections and local actions"
         },
         {
-            "collection_id": "fractracker-moratoriums",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/fractracker/moratoriums/stac-collection.json",
+            "collection_id": "pnnl-im3-atlas-campus",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-campus/stac-collection.json",
             "assets": [
                 {
-                    "id": "moratoriums-pmtiles",
-                    "display_name": "Local moratoriums and restrictions",
-                    "group": "Projections and local actions",
+                    "id": "atlas-campus-pmtiles",
+                    "display_name": "Mapped data center campuses",
+                    "group": "Data centers",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#08519C",
+                        "fill-opacity": 0.35
+                    },
+                    "outline_style": {
+                        "line-color": "#08306B",
+                        "line-width": 0.8,
+                        "line-opacity": 0.9
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "operator",
+                        "sqft",
+                        "county",
+                        "state_abb"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "pnnl-im3-atlas-building",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-building/stac-collection.json",
+            "assets": [
+                {
+                    "id": "atlas-building-pmtiles",
+                    "display_name": "Mapped data center buildings",
+                    "group": "Data centers",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#3182BD",
+                        "fill-opacity": 0.6
+                    },
+                    "outline_style": {
+                        "line-color": "#08519C",
+                        "line-width": 0.6,
+                        "line-opacity": 0.9
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "operator",
+                        "sqft",
+                        "county",
+                        "state_abb"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "epoch-ai-data-center-footprints",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/epoch/ai-data-center-footprints/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ai-data-center-footprints-pmtiles",
+                    "display_name": "AI data center footprints",
+                    "group": "Data centers",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
                             "match",
                             [
                                 "get",
-                                "action"
+                                "feature_type"
                             ],
-                            "Moratorium",
-                            "#E6550D",
-                            "Ban",
-                            "#A50F15",
-                            "Zoning restriction",
-                            "#3182BD",
-                            "Curative Amendment",
-                            "#756BB1",
-                            "Other",
-                            "#969696",
+                            "Building",
+                            "#5f5f5f",
+                            "Cooling",
+                            "#1f78b4",
+                            "Backup generator",
+                            "#6a3d9a",
+                            "Power substation",
+                            "#ff7f00",
+                            "Power generator",
+                            "#d01c8b",
                             "#cccccc"
                         ],
-                        "fill-opacity": 0.45
+                        "fill-opacity": 0.75
                     },
                     "outline_style": {
                         "line-color": "#4d4d4d",
@@ -527,611 +916,222 @@
                         "line-opacity": 0.6
                     },
                     "tooltip_fields": [
-                        "jurisdiction",
-                        "state",
-                        "action",
-                        "status",
-                        "date_enacted",
-                        "expiration_date"
+                        "data_center",
+                        "feature_type",
+                        "building_label",
+                        "start_date"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Moratorium",
-                            "color": "#E6550D"
+                            "label": "Building",
+                            "color": "#5f5f5f"
                         },
                         {
-                            "label": "Ban",
-                            "color": "#A50F15"
+                            "label": "Cooling",
+                            "color": "#1f78b4"
                         },
                         {
-                            "label": "Zoning restriction",
-                            "color": "#3182BD"
+                            "label": "Backup generator",
+                            "color": "#6a3d9a"
                         },
                         {
-                            "label": "Curative Amendment",
-                            "color": "#756BB1"
+                            "label": "Power substation",
+                            "color": "#ff7f00"
                         },
                         {
-                            "label": "Other",
-                            "color": "#969696"
+                            "label": "Power generator",
+                            "color": "#d01c8b"
                         }
                     ]
                 }
             ]
         },
         {
-            "collection_id": "svi-2022",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
+            "collection_id": "pnnl-im3-atlas-point",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/pnnl-im3/atlas-point/stac-collection.json",
             "assets": [
                 {
-                    "id": "tract-pmtiles",
-                    "display_name": "Social vulnerability by tract",
-                    "group": "Equity",
+                    "id": "atlas-point-pmtiles",
+                    "display_name": "Mapped data center points",
+                    "group": "Data centers",
                     "visible": false,
+                    "layer_type": "circle",
                     "default_style": {
-                        "fill-color": [
-                            "interpolate",
-                            [
-                                "linear"
-                            ],
-                            [
-                                "get",
-                                "RPL_THEMES"
-                            ],
-                            0,
-                            "#ffffcc",
-                            0.5,
-                            "#fd8d3c",
-                            1,
-                            "#bd0026"
-                        ],
-                        "fill-opacity": 0.65
-                    },
-                    "default_filter": [
-                        ">=",
-                        [
-                            "get",
-                            "RPL_THEMES"
-                        ],
-                        0
-                    ],
-                    "tooltip_fields": [
-                        "COUNTY",
-                        "ST_ABBR",
-                        "FIPS",
-                        "RPL_THEMES"
-                    ],
-                    "legend_type": "continuous",
-                    "legend_label": "SVI percentile"
-                },
-                {
-                    "id": "county-pmtiles",
-                    "display_name": "Social vulnerability by county",
-                    "group": "Equity",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "interpolate",
-                            [
-                                "linear"
-                            ],
-                            [
-                                "get",
-                                "RPL_THEMES"
-                            ],
-                            0,
-                            "#ffffcc",
-                            0.5,
-                            "#fd8d3c",
-                            1,
-                            "#bd0026"
-                        ],
-                        "fill-opacity": 0.65
-                    },
-                    "default_filter": [
-                        ">=",
-                        [
-                            "get",
-                            "RPL_THEMES"
-                        ],
-                        0
-                    ],
-                    "tooltip_fields": [
-                        "COUNTY",
-                        "ST_ABBR",
-                        "RPL_THEMES"
-                    ],
-                    "legend_type": "continuous",
-                    "legend_label": "SVI percentile"
-                }
-            ]
-        },
-        {
-            "collection_id": "acs-2020-2024-blockgroup",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/acs-2020-2024/blockgroup/stac-collection.json",
-            "assets": [
-                {
-                    "id": "blockgroup-pmtiles",
-                    "display_name": "Median household income by block group",
-                    "group": "Equity",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "case",
-                            [
-                                "==",
-                                [
-                                    "typeof",
-                                    [
-                                        "get",
-                                        "MHHI"
-                                    ]
-                                ],
-                                "number"
-                            ],
-                            [
-                                "interpolate",
-                                [
-                                    "linear"
-                                ],
-                                [
-                                    "get",
-                                    "MHHI"
-                                ],
-                                40000,
-                                "#D7191C",
-                                75000,
-                                "#FDAE61",
-                                101550,
-                                "#FFFFBF",
-                                150000,
-                                "#A6D96A",
-                                200000,
-                                "#1A9641"
-                            ],
-                            "#cccccc"
-                        ],
-                        "fill-opacity": 0.65
-                    },
-                    "tooltip_fields": [
-                        "NAMELSAD",
-                        "GEOID",
-                        "MHHI",
-                        "TotPop",
-                        "PovInd",
-                        "NoCar"
-                    ],
-                    "legend_type": "continuous",
-                    "legend_label": "Median household income in dollars"
-                }
-            ]
-        },
-        {
-            "collection_id": "mappinginequality",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-mappinginequality/stac-collection.json",
-            "assets": [
-                {
-                    "id": "mappinginequality-pmtiles",
-                    "display_name": "Historical redlining grades",
-                    "group": "Equity",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "grade"
-                            ],
-                            "A",
-                            "#76A865",
-                            "B",
-                            "#7CB5BD",
-                            "C",
-                            "#F0DE6C",
-                            "D",
-                            "#D9838D",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.7
-                    },
-                    "tooltip_fields": [
-                        "grade",
-                        "city",
-                        "label",
-                        "category"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "A Best",
-                            "color": "#76A865"
-                        },
-                        {
-                            "label": "B Still desirable",
-                            "color": "#7CB5BD"
-                        },
-                        {
-                            "label": "C Definitely declining",
-                            "color": "#F0DE6C"
-                        },
-                        {
-                            "label": "D Hazardous",
-                            "color": "#D9838D"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "ghs-pop-2020",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-population/ghs-pop-2020/stac-collection.json",
-            "assets": [
-                {
-                    "id": "ghs-pop-2020-cog",
-                    "display_name": "Population density in 2020",
-                    "group": "Equity",
-                    "visible": false,
-                    "colormap": "magma",
-                    "rescale": "0,200",
-                    "nodata": 0,
-                    "legend_label": "People per 90 m cell"
-                }
-            ]
-        },
-        {
-            "collection_id": "epa-sab-v3-cws",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-epa-water/epa-sab-v3/cws/stac-collection.json",
-            "assets": [
-                {
-                    "id": "sab-cws-pmtiles",
-                    "display_name": "Community water system service areas",
-                    "group": "Water",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#5C6BC0",
-                        "fill-opacity": 0.3
-                    },
-                    "outline_style": {
-                        "line-color": "#283593",
-                        "line-width": 0.4,
-                        "line-opacity": 0.6
-                    },
-                    "tooltip_fields": [
-                        "PWS_Name",
-                        "PWSID",
-                        "Population_Served_Count",
-                        "Service_Area_Type"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "usgs-wbd-hu8",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs-wbd/wbd/hu8/stac-collection.json",
-            "assets": [
-                {
-                    "id": "hu8-pmtiles",
-                    "display_name": "Watersheds",
-                    "group": "Water",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#0277BD",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#0277BD",
-                        "line-width": 0.7,
-                        "line-opacity": 0.6
+                        "circle-color": "#3182BD",
+                        "circle-radius": 4,
+                        "circle-stroke-color": "#ffffff",
+                        "circle-stroke-width": 0.6
                     },
                     "tooltip_fields": [
                         "name",
-                        "huc8",
-                        "areasqkm",
-                        "states"
+                        "operator",
+                        "county",
+                        "state_abb"
                     ]
                 }
             ]
         },
         {
-            "collection_id": "wetlands-nwi",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-wetlands/nwi/stac-collection.json",
+            "collection_id": "epoch-ai-data-centers",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/epoch/ai-data-centers/stac-collection.json",
             "assets": [
                 {
-                    "id": "nwi-pmtiles",
-                    "display_name": "Wetlands",
-                    "group": "Water",
+                    "id": "ai-data-centers-pmtiles",
+                    "display_name": "Large AI data centers",
+                    "group": "Data centers",
                     "visible": false,
+                    "layer_type": "circle",
                     "default_style": {
-                        "fill-color": [
+                        "circle-color": [
                             "match",
                             [
                                 "get",
-                                "WETLAND_TYPE"
+                                "owner_name"
                             ],
-                            "Freshwater Emergent Wetland",
-                            "#66C2A5",
-                            "Freshwater Forested/Shrub Wetland",
-                            "#1B7837",
-                            "Freshwater Pond",
-                            "#41B6C4",
-                            "Lake",
-                            "#225EA8",
-                            "Riverine",
-                            "#7FCDBB",
-                            "Estuarine and Marine Wetland",
-                            "#8C6BB1",
-                            "Estuarine and Marine Deepwater",
-                            "#4D004B",
-                            "#969696"
+                            "Google",
+                            "#EA8D00",
+                            "Meta",
+                            "#0058DC",
+                            "Microsoft",
+                            "#009AF1",
+                            "Amazon",
+                            "#FC6538",
+                            "CoreWeave",
+                            "#279E27",
+                            "Oracle",
+                            "#E03D90",
+                            "SpaceXAI",
+                            "#6A3ECB",
+                            "#bdbdbd"
                         ],
-                        "fill-opacity": 0.7
+                        "circle-radius": 6,
+                        "circle-stroke-color": "#222222",
+                        "circle-stroke-width": 0.8
                     },
                     "tooltip_fields": [
-                        "WETLAND_TYPE",
-                        "ATTRIBUTE",
-                        "state_code"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "flood-hazard",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-hazard/flood-hazard/stac-collection.json",
-            "assets": [
-                {
-                    "id": "flood-hazard-pmtiles",
-                    "display_name": "Flood hazard zones",
-                    "group": "Hazards",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "FLD_ZONE"
-                            ],
-                            "A",
-                            "#0D47A1",
-                            "AE",
-                            "#0D47A1",
-                            "AH",
-                            "#1565C0",
-                            "AO",
-                            "#1565C0",
-                            "A99",
-                            "#1565C0",
-                            "V",
-                            "#B71C1C",
-                            "VE",
-                            "#B71C1C",
-                            "X",
-                            "#90CAF9",
-                            "#B0BEC5"
-                        ],
-                        "fill-opacity": 0.5
-                    },
-                    "tooltip_fields": [
-                        "FLD_ZONE",
-                        "ZONE_SUBTY",
-                        "SFHA_TF"
+                        "name",
+                        "owner_name",
+                        "current_power_mw",
+                        "current_h100_equivalents",
+                        "operational",
+                        "state"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "High risk A and AE",
-                            "color": "#0D47A1"
+                            "label": "Google",
+                            "color": "#EA8D00"
                         },
                         {
-                            "label": "Coastal high hazard V and VE",
-                            "color": "#B71C1C"
+                            "label": "Meta",
+                            "color": "#0058DC"
                         },
                         {
-                            "label": "Minimal risk X",
-                            "color": "#90CAF9"
+                            "label": "Microsoft",
+                            "color": "#009AF1"
+                        },
+                        {
+                            "label": "Amazon",
+                            "color": "#FC6538"
+                        },
+                        {
+                            "label": "CoreWeave",
+                            "color": "#279E27"
+                        },
+                        {
+                            "label": "Oracle",
+                            "color": "#E03D90"
+                        },
+                        {
+                            "label": "SpaceXAI",
+                            "color": "#6A3ECB"
+                        },
+                        {
+                            "label": "Other owner",
+                            "color": "#bdbdbd"
                         }
                     ]
                 }
             ]
         },
         {
-            "collection_id": "sea-level-rise",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-hazard/sea-level-rise/stac-collection.json",
+            "collection_id": "fractracker-data-centers",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-datacenters/fractracker/data-centers/stac-collection.json",
             "assets": [
                 {
-                    "id": "sea-level-rise-pmtiles",
-                    "display_name": "Sea level rise of 5 feet",
-                    "group": "Hazards",
-                    "visible": false,
+                    "id": "data-centers-pmtiles",
+                    "display_name": "Existing and proposed data centers",
+                    "group": "Data centers",
+                    "visible": true,
+                    "layer_type": "circle",
                     "default_style": {
-                        "fill-color": "#01579B",
-                        "fill-opacity": 0.55
-                    },
-                    "tooltip_fields": [
-                        "state",
-                        "region",
-                        "slr_ft"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "pad-us-4.1-fee",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
-            "assets": [
-                {
-                    "id": "fee-pmtiles",
-                    "display_name": "Protected areas",
-                    "group": "Land and habitat",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": [
+                        "circle-color": [
                             "match",
                             [
                                 "get",
-                                "GAP_Sts"
+                                "status"
                             ],
-                            "1",
-                            "#26633A",
-                            "2",
-                            "#3E9C47",
-                            "3",
-                            "#7EB3D3",
-                            "4",
-                            "#BDBDBD",
-                            "#888888"
+                            "Proposed",
+                            "#E6550D",
+                            "Pre-proposal",
+                            "#FDAE6B",
+                            "Approved/Permitted/Under construction",
+                            "#FFD92F",
+                            "Operating",
+                            "#3182BD",
+                            "Expanding",
+                            "#6BAED6",
+                            "Suspended",
+                            "#969696",
+                            "Cancelled",
+                            "#525252",
+                            "#cccccc"
                         ],
-                        "fill-opacity": 0.6
+                        "circle-radius": 4.5,
+                        "circle-stroke-color": "#ffffff",
+                        "circle-stroke-width": 0.6
                     },
                     "tooltip_fields": [
-                        "Unit_Nm",
-                        "GAP_Sts",
-                        "Mang_Type"
+                        "facility_name",
+                        "status",
+                        "operator_name",
+                        "mw",
+                        "sizerank",
+                        "community_pushback",
+                        "city",
+                        "state"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "GAP 1 managed for biodiversity",
-                            "color": "#26633A"
+                            "label": "Proposed",
+                            "color": "#E6550D"
                         },
                         {
-                            "label": "GAP 2 managed with some extractive use",
-                            "color": "#3E9C47"
+                            "label": "Pre-proposal",
+                            "color": "#FDAE6B"
                         },
                         {
-                            "label": "GAP 3 multiple use",
-                            "color": "#7EB3D3"
+                            "label": "Approved/Permitted/Under construction",
+                            "color": "#FFD92F"
                         },
                         {
-                            "label": "GAP 4 no known mandate",
-                            "color": "#BDBDBD"
+                            "label": "Operating",
+                            "color": "#3182BD"
+                        },
+                        {
+                            "label": "Expanding",
+                            "color": "#6BAED6"
+                        },
+                        {
+                            "label": "Suspended",
+                            "color": "#969696"
+                        },
+                        {
+                            "label": "Cancelled",
+                            "color": "#525252"
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "usfws-critical-habitat-final",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json",
-            "assets": [
-                {
-                    "id": "final-pmtiles",
-                    "display_name": "Critical habitat",
-                    "group": "Land and habitat",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#AD1457",
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#880E4F",
-                        "line-width": 0.5,
-                        "line-opacity": 0.7
-                    },
-                    "tooltip_fields": [
-                        "comname",
-                        "sciname",
-                        "unitname",
-                        "status"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "nlcd",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd/stac-collection.json",
-            "assets": [
-                {
-                    "id": "nlcd-cog-2024",
-                    "display_name": "Land cover in 2024",
-                    "group": "Land and habitat",
-                    "legend_type": "categorical"
-                }
-            ]
-        },
-        {
-            "collection_id": "census-2024-state",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/state/stac-collection.json",
-            "group": {
-                "name": "Boundaries",
-                "collapsed": true
-            },
-            "assets": [
-                {
-                    "id": "state-pmtiles",
-                    "display_name": "States",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.8,
-                        "line-opacity": 0.5
-                    },
-                    "tooltip_fields": [
-                        "NAME",
-                        "STUSPS",
-                        "GEOID"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "census-2024-county",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/county/stac-collection.json",
-            "group": {
-                "name": "Boundaries",
-                "collapsed": true
-            },
-            "assets": [
-                {
-                    "id": "county-pmtiles",
-                    "display_name": "Counties",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.4,
-                        "line-opacity": 0.5
-                    },
-                    "tooltip_fields": [
-                        "NAMELSAD",
-                        "STATEFP",
-                        "GEOID"
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "census-2024-tract",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/tract/stac-collection.json",
-            "group": {
-                "name": "Boundaries",
-                "collapsed": true
-            },
-            "assets": [
-                {
-                    "id": "tract-pmtiles",
-                    "display_name": "Census tracts",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.03
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.25,
-                        "line-opacity": 0.5
-                    },
-                    "tooltip_fields": [
-                        "NAMELSAD",
-                        "GEOID",
-                        "COUNTYFP"
                     ]
                 }
             ]
