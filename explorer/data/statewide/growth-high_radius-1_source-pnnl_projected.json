@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T06:15:49.792867+00:00",
+ "generated": "2026-11-17T08:38:41.315060+00:00",
  "results": {
   "justice": {
    "justice": [
@@ -139,9 +139,9 @@
      "fmt": "pct",
      "scale": "linear",
      "dir": 1,
-     "value": 0.043732042513863215,
-     "pct": 98.9,
-     "pillar_score": 78.4
+     "value": 0.03709945009242144,
+     "pct": 96.6,
+     "pillar_score": 78.0
     },
     {
      "variable": "imperiled",
@@ -152,7 +152,7 @@
      "dir": 1,
      "value": 2.234375689411765,
      "pct": 33.3,
-     "pillar_score": 78.4
+     "pillar_score": 78.0
     },
     {
      "variable": "intactness",
@@ -163,7 +163,7 @@
      "dir": 1,
      "value": 0.7396116952380952,
      "pct": 100.0,
-     "pillar_score": 78.4
+     "pillar_score": 78.0
     },
     {
      "variable": "natural_site",
@@ -174,7 +174,7 @@
      "dir": 1,
      "value": 0.639860737245841,
      "pct": 83.4,
-     "pillar_score": 78.4
+     "pillar_score": 78.0
     },
     {
      "variable": "protected",
@@ -185,7 +185,7 @@
      "dir": 1,
      "value": 0.24313742097966726,
      "pct": 98.6,
-     "pillar_score": 78.4
+     "pillar_score": 78.0
     },
     {
      "variable": "threatened",
@@ -196,7 +196,7 @@
      "dir": 1,
      "value": 9.92512707948244,
      "pct": 56.3,
-     "pillar_score": 78.4
+     "pillar_score": 78.0
     }
    ]
   },
@@ -210,8 +210,8 @@
      "scale": "linear",
      "dir": -1,
      "value": 1.0,
-     "pct": 49.4,
-     "pillar_score": 36.4
+     "pct": 48.3,
+     "pillar_score": 36.1
     },
     {
      "variable": "floodplain_mi",
@@ -222,7 +222,7 @@
      "dir": -1,
      "value": 1.0,
      "pct": 6.4,
-     "pillar_score": 36.4
+     "pillar_score": 36.1
     },
     {
      "variable": "on_site",
@@ -231,9 +231,9 @@
      "fmt": "int",
      "scale": "linear",
      "dir": 1,
-     "value": 0.6691312384473198,
-     "pct": 34.1,
-     "pillar_score": 36.4
+     "value": 0.6649722735674677,
+     "pct": 33.7,
+     "pillar_score": 36.1
     },
     {
      "variable": "proposed_habitat_mi",
@@ -243,8 +243,8 @@
      "scale": "linear",
      "dir": -1,
      "value": 1.0,
-     "pct": 50.0,
-     "pillar_score": 36.4
+     "pct": 49.9,
+     "pillar_score": 36.1
     },
     {
      "variable": "river_mi",
@@ -255,7 +255,7 @@
      "dir": -1,
      "value": 1.0,
      "pct": 49.1,
-     "pillar_score": 36.4
+     "pillar_score": 36.1
     },
     {
      "variable": "wetland_mi",
@@ -266,7 +266,7 @@
      "dir": -1,
      "value": 0.56015,
      "pct": 29.3,
-     "pillar_score": 36.4
+     "pillar_score": 36.1
     }
    ]
   }

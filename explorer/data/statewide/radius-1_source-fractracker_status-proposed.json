@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T06:15:49.792867+00:00",
+ "generated": "2026-11-17T08:38:41.315060+00:00",
  "results": {
   "justice": {
    "justice": [
@@ -139,7 +139,7 @@
      "fmt": "pct",
      "scale": "linear",
      "dir": 1,
-     "value": 0.043732042513863215,
+     "value": 0.03709945009242144,
      "pct": 98.9,
      "pillar_score": 72.4
     },
@@ -231,7 +231,7 @@
      "fmt": "int",
      "scale": "linear",
      "dir": 1,
-     "value": 0.6691312384473198,
+     "value": 0.6649722735674677,
      "pct": 35.2,
      "pillar_score": 35.9
     },

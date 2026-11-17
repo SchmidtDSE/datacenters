@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T06:15:49.792867+00:00",
+ "generated": "2026-11-17T08:38:41.315060+00:00",
  "results": {
   "justice": {
    "justice": [
@@ -139,9 +139,9 @@
      "fmt": "pct",
      "scale": "linear",
      "dir": 1,
-     "value": 0.043732042513863215,
-     "pct": 99.6,
-     "pillar_score": 79.5
+     "value": 0.03709945009242144,
+     "pct": 99.2,
+     "pillar_score": 79.4
     },
     {
      "variable": "imperiled",
@@ -152,7 +152,7 @@
      "dir": 1,
      "value": 2.234375689411765,
      "pct": 41.3,
-     "pillar_score": 79.5
+     "pillar_score": 79.4
     },
     {
      "variable": "intactness",
@@ -163,7 +163,7 @@
      "dir": 1,
      "value": 0.7396116952380952,
      "pct": 97.6,
-     "pillar_score": 79.5
+     "pillar_score": 79.4
     },
     {
      "variable": "natural_site",
@@ -174,7 +174,7 @@
      "dir": 1,
      "value": 0.639860737245841,
      "pct": 92.1,
-     "pillar_score": 79.5
+     "pillar_score": 79.4
     },
     {
      "variable": "protected",
@@ -185,7 +185,7 @@
      "dir": 1,
      "value": 0.24313742097966726,
      "pct": 99.2,
-     "pillar_score": 79.5
+     "pillar_score": 79.4
     },
     {
      "variable": "threatened",
@@ -196,7 +196,7 @@
      "dir": 1,
      "value": 9.92512707948244,
      "pct": 46.9,
-     "pillar_score": 79.5
+     "pillar_score": 79.4
     }
    ]
   },
@@ -210,7 +210,7 @@
      "scale": "linear",
      "dir": -1,
      "value": 1.0,
-     "pct": 49.8,
+     "pct": 49.6,
      "pillar_score": 41.1
     },
     {
@@ -231,7 +231,7 @@
      "fmt": "int",
      "scale": "linear",
      "dir": 1,
-     "value": 0.6691312384473198,
+     "value": 0.6649722735674677,
      "pct": 51.2,
      "pillar_score": 41.1
     },
