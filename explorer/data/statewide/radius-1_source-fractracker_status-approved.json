@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T08:38:41.315060+00:00",
+ "generated": "2026-11-17T11:09:59.800688+00:00",
  "results": {
   "justice": {
    "justice": [
@@ -211,7 +211,7 @@
      "dir": -1,
      "value": 1.0,
      "pct": 48.6,
-     "pillar_score": 40.6
+     "pillar_score": 41.5
     },
     {
      "variable": "floodplain_mi",
@@ -222,7 +222,18 @@
      "dir": -1,
      "value": 1.0,
      "pct": 9.9,
-     "pillar_score": 40.6
+     "pillar_score": 41.5
+    },
+    {
+     "variable": "listed_species",
+     "label": "Listed and proposed species whose range covers the site",
+     "unit": "species",
+     "fmt": "int",
+     "scale": "linear",
+     "dir": 1,
+     "value": 4.692698706099815,
+     "pct": 46.7,
+     "pillar_score": 41.5
     },
     {
      "variable": "on_site",
@@ -233,7 +244,7 @@
      "dir": 1,
      "value": 0.6649722735674677,
      "pct": 45.6,
-     "pillar_score": 40.6
+     "pillar_score": 41.5
     },
     {
      "variable": "proposed_habitat_mi",
@@ -244,7 +255,7 @@
      "dir": -1,
      "value": 1.0,
      "pct": 49.7,
-     "pillar_score": 40.6
+     "pillar_score": 41.5
     },
     {
      "variable": "river_mi",
@@ -255,7 +266,7 @@
      "dir": -1,
      "value": 1.0,
      "pct": 49.2,
-     "pillar_score": 40.6
+     "pillar_score": 41.5
     },
     {
      "variable": "wetland_mi",
@@ -266,7 +277,7 @@
      "dir": -1,
      "value": 0.56015,
      "pct": 40.7,
-     "pillar_score": 40.6
+     "pillar_score": 41.5
     }
    ]
   }

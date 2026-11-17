@@ -14,6 +14,17 @@ prop8 AS MATERIALIZED (
   FROM read_parquet('s3://public-usfws/critical-habitat/proposed/hex/h0=*/data_0.parquet') k
   SEMI JOIN cells c ON c.h8 = k.h8 AND c.h0 = k.h0
 ),
+-- ESA section 7: USFWS ranges of listed and proposed species that cover the site cell, as
+-- IPaC screens a project location. Ranges are coarse, often whole counties, so only the site
+-- cell is used.
+spsite AS MATERIALIZED (SELECT DISTINCT r.h8, r.h0 FROM ring r JOIN fac f USING (id) WHERE r.h8 = f.h8),
+spp8 AS MATERIALIZED (
+  SELECT s.h8, COUNT(DISTINCT s.ENTITY_ID) AS n
+  FROM read_parquet('s3://public-usfws/species-ranges/hex/h0=*/data_0.parquet') s
+  SEMI JOIN spsite c ON c.h8 = s.h8 AND c.h0 = s.h0
+  WHERE s.STATUS_ABB IN ('Endangered', 'Threatened', 'Proposed Endangered', 'Proposed Threatened')
+  GROUP BY s.h8
+),
 -- Clean Water Act section 404: NWI wetlands, the same classes as the water pillar
 wet8 AS MATERIALIZED (
   SELECT DISTINCT n.h8
@@ -64,13 +75,14 @@ agg AS (
   SELECT f.id,
          COALESCE(n.crit, {{RADIUS}}) AS crit, COALESCE(n.prop, {{RADIUS}}) AS prop,
          COALESCE(n.wet, {{RADIUS}}) AS wet, COALESCE(n.fld, {{RADIUS}}) AS fld,
-         COALESCE(n.riv, {{RADIUS}}) AS riv,
+         COALESCE(n.riv, {{RADIUS}}) AS riv, COALESCE(sp.n, 0) AS species,
          COALESCE(n.crit = 0, false)::INT + COALESCE(n.prop = 0, false)::INT + COALESCE(n.wet = 0, false)::INT
            + COALESCE(n.fld = 0, false)::INT + COALESCE(n.riv = 0, false)::INT AS on_site
-  FROM fac f LEFT JOIN near n USING (id)
+  FROM fac f LEFT JOIN near n USING (id) LEFT JOIN spp8 sp ON sp.h8 = f.h8
 ),
 vals AS (
   SELECT id, 'on_site' AS variable, 'Screened resources in the site cell' AS label, on_site AS value, 'resources' AS unit, 'int' AS fmt, 'linear' AS scale, 1 AS dir FROM agg
+  UNION ALL SELECT id, 'listed_species', 'Listed and proposed species whose range covers the site', species, 'species', 'int', 'linear', 1 FROM agg
   UNION ALL SELECT id, 'critical_habitat_mi', 'Distance to final critical habitat', crit, 'miles', 'num1', 'linear', -1 FROM agg
   UNION ALL SELECT id, 'proposed_habitat_mi', 'Distance to proposed critical habitat', prop, 'miles', 'num1', 'linear', -1 FROM agg
   UNION ALL SELECT id, 'wetland_mi', 'Distance to a mapped wetland', wet, 'miles', 'num1', 'linear', -1 FROM agg

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T06:15:27.588Z",
+ "generated": "2026-11-17T11:08:52.949Z",
  "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
  "datasets": [
   {
@@ -1203,6 +1203,55 @@
       "rel": "self",
       "href": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/proposed/stac-collection.json",
       "type": "application/json"
+     }
+    ]
+   }
+  },
+  {
+   "id": "usfws-species-ranges",
+   "prefixes": [
+    "s3://public-usfws/species-ranges/hex"
+   ],
+   "stac": {
+    "id": "usfws-species-ranges",
+    "title": "USFWS Current Species Ranges",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "U.S. Fish and Wildlife Service (USFWS)",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://ecos.fws.gov/"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://boettigerlab.berkeley.edu"
+     }
+    ],
+    "sci:citation": "U.S. Fish and Wildlife Service. (2026). Current ranges of species in the Environmental Conservation Online System (usfws_complete_species_current_range, updated 2026-11-12) [Data set]. https://ecos.fws.gov/docs/species/shapefiles/usfws_complete_species_current_range.zip. Accessed 2026-11-17.",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-usfws/species-ranges/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://ecos.fws.gov/",
+      "type": "text/html",
+      "title": "FWS Environmental Conservation Online System"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-copyright",
+      "type": "text/html",
+      "title": "US Government works are in the public domain"
      }
     ]
    }

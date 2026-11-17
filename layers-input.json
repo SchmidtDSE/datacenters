@@ -158,6 +158,48 @@
             ]
         },
         {
+            "collection_id": "usfws-species-ranges",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/species-ranges/stac-collection.json",
+            "assets": [
+                {
+                    "id": "species-ranges-pmtiles",
+                    "display_name": "Listed species ranges",
+                    "group": "Land and habitat",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.06
+                    },
+                    "outline_style": {
+                        "line-color": "#4A148C",
+                        "line-width": 0.3,
+                        "line-opacity": 0.4
+                    },
+                    "default_filter": [
+                        "match",
+                        [
+                            "get",
+                            "STATUS_ABB"
+                        ],
+                        [
+                            "Endangered",
+                            "Threatened",
+                            "Proposed Endangered",
+                            "Proposed Threatened"
+                        ],
+                        true,
+                        false
+                    ],
+                    "tooltip_fields": [
+                        "COMNAME",
+                        "SCINAME",
+                        "STATUS_ABB",
+                        "POP_ABBREV"
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "usfws-critical-habitat-final",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json",
             "assets": [

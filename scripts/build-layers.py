@@ -384,6 +384,22 @@ collections = [
         }],
     },
     {
+        "collection_id": "usfws-species-ranges",
+        "collection_url": f"{S3}/public-usfws/species-ranges/stac-collection.json",
+        "assets": [{
+            "id": "species-ranges-pmtiles",
+            "display_name": "Listed species ranges",
+            "group": "Land and habitat",
+            "visible": False,
+            # ranges overlap heavily, so a faint fill shows where many species meet
+            "default_style": {"fill-color": "#6A1B9A", "fill-opacity": 0.06},
+            "outline_style": outline("#4A148C", 0.3, 0.4),
+            "default_filter": ["match", ["get", "STATUS_ABB"],
+                               ["Endangered", "Threatened", "Proposed Endangered", "Proposed Threatened"], True, False],
+            "tooltip_fields": ["COMNAME", "SCINAME", "STATUS_ABB", "POP_ABBREV"],
+        }],
+    },
+    {
         "collection_id": "usfws-critical-habitat-final",
         "collection_url": f"{S3}/public-usfws/critical-habitat/final/stac-collection.json",
         "assets": [{
@@ -427,7 +443,7 @@ for cid, path, asset, name, color, width, tips in [
 # fills go first, boundary outlines and local actions above them, and data center points last
 # so no layer covers them.
 DRAW_ORDER = [
-    "nlcd", "pad-us-4.1-fee", "usfws-critical-habitat-final", "sea-level-rise", "flood-hazard",
+    "nlcd", "pad-us-4.1-fee", "usfws-species-ranges", "usfws-critical-habitat-final", "sea-level-rise", "flood-hazard",
     "wetlands-nwi", "usgs-wbd-hu8", "epa-sab-v3-cws", "ghs-pop-2020", "mappinginequality",
     "acs-2020-2024-blockgroup", "svi-2022",
     "census-2024-tract", "census-2024-county", "census-2024-state",
