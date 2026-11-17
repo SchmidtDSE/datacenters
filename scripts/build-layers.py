@@ -5,7 +5,7 @@ Edit the layer list here rather than hand-editing the JSON.
 """
 import json
 
-GLEN = "https://cdn.jsdelivr.net/gh/SchmidtDSE/glen@v3.51.0"
+GLEN = "https://cdn.jsdelivr.net/gh/SchmidtDSE/glen@v4.0.5"
 S3 = "https://s3-west.nrp-nautilus.io"
 DC = f"{S3}/public-datacenters"
 
@@ -433,6 +433,7 @@ config = {
         f"{GLEN}/core/plugins/charts.js",
         f"{GLEN}/core/plugins/draw.js",
         {"url": f"{GLEN}/core/plugins/uploads.js", "options": {}},
+        f"{GLEN}/core/plugins/geolocate.js",
     ],
     "auto_approve": True,
     "geocoder": {"provider": "nominatim", "search_box": True},
