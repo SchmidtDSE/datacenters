@@ -5,7 +5,7 @@ Edit the layer list here rather than hand-editing the JSON.
 """
 import json
 
-GLEN = "https://cdn.jsdelivr.net/gh/SchmidtDSE/glen@v4.0.5"
+GLEN = "https://cdn.jsdelivr.net/gh/SchmidtDSE/glen@v4.0.6"
 S3 = "https://s3-west.nrp-nautilus.io"
 DC = f"{S3}/public-datacenters"
 
