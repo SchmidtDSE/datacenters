@@ -442,11 +442,11 @@ config = {
     "welcome": {
         "message": "Explore existing, proposed and projected US data centers alongside social vulnerability, income, water and hazard data. Try asking:",
         "examples": [
-            "How does social vulnerability in census tracts with proposed data centers compare with tracts that have operating ones?",
-            "Which counties have proposed data centers and also a local moratorium or ban?",
-            "Show proposed data centers that face community pushback and color them by size class.",
-            "Under the moderate growth scenario, how much cooling water would projected sites in each state consume each year?",
-            "How many proposed hyperscale data centers lie inside FEMA high-risk flood zones?",
+            "Show only the proposed data centers that face community pushback.",
+            "Which states have the most proposed data center capacity in megawatts?",
+            "Show local moratoriums and bans on data centers alongside the proposed data centers.",
+            "List the ten largest AI data centers in the US by power and show them on the map.",
+            "Show proposed hyperscale and mega campus data centers over social vulnerability by county.",
         ],
     },
     "links": {
@@ -454,6 +454,14 @@ config = {
         "docs": "https://schmidtdse.github.io/glen/",
         "carbon": True,
     },
+    "header": {"nav": [
+        {"label": "About", "href": "https://schmidtdse.github.io/glen/", "icon": "info"},
+        {"label": "Data", "href": "#data", "icon": "database", "external": False},
+        {"label": "Explorer", "href": "/explorer/", "external": False},
+        {"label": "GitHub", "href": "https://github.com/SchmidtDSE/datacenters", "icon": "github"},
+        {"label": "Carbon", "href": "https://carbon-api.nrp-nautilus.io/", "icon": "leaf"},
+        {"label": "Contact us", "href": "mailto:dse@berkeley.edu", "icon": "mail", "external": False},
+    ]},
     "collections": collections,
 }
 
