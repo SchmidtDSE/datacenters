@@ -49,6 +49,17 @@ riv8 AS MATERIALIZED (
   FROM read_parquet('s3://public-rivers/american-rivers/nri-2024/hex/h0=*/data_0.parquet') n
   SEMI JOIN cells c ON c.h8 = n.h8 AND c.h0 = n.h0
 ),
+-- NHPA section 106 and Executive Order 13175: Census AIANNH legal land bases, meaning
+-- federal and state reservations, off-reservation trust land and Hawaiian home lands, plus the
+-- Oklahoma tribal statistical areas, several of which courts have held to be reservations since
+-- McGirt v. Oklahoma (2020); the other statistical areas (tribal and state designated, Alaska
+-- Native village, joint-use) are left out
+trb8 AS MATERIALIZED (
+  SELECT DISTINCT t.h8
+  FROM read_parquet('s3://public-census/census-2024/aiannh/hex/h0=*/data_0.parquet') t
+  SEMI JOIN cells c ON c.h8 = t.h8 AND c.h0 = t.h0
+  WHERE t.CLASSFP IN ('D2', 'D3', 'D4', 'D5', 'D8', 'F1') OR t.MTFCC = 'G2140'
+),
 -- distance in miles from each facility to each ring cell, 0 for the site cell
 dist AS MATERIALIZED (
   SELECT r.id, r.h8,
@@ -65,19 +76,20 @@ near AS (
          MIN(d.mi) FILTER (WHERE p.h8 IS NOT NULL) AS prop,
          MIN(d.mi) FILTER (WHERE w.h8 IS NOT NULL) AS wet,
          MIN(d.mi) FILTER (WHERE z.h8 IS NOT NULL) AS fld,
-         MIN(d.mi) FILTER (WHERE v.h8 IS NOT NULL) AS riv
+         MIN(d.mi) FILTER (WHERE v.h8 IS NOT NULL) AS riv,
+         MIN(d.mi) FILTER (WHERE t.h8 IS NOT NULL) AS trb
   FROM dist d
   LEFT JOIN crit8 k USING (h8) LEFT JOIN prop8 p USING (h8) LEFT JOIN wet8 w USING (h8)
-  LEFT JOIN fld8 z USING (h8) LEFT JOIN riv8 v USING (h8)
+  LEFT JOIN fld8 z USING (h8) LEFT JOIN riv8 v USING (h8) LEFT JOIN trb8 t USING (h8)
   GROUP BY d.id
 ),
 agg AS (
   SELECT f.id,
          COALESCE(n.crit, {{RADIUS}}) AS crit, COALESCE(n.prop, {{RADIUS}}) AS prop,
          COALESCE(n.wet, {{RADIUS}}) AS wet, COALESCE(n.fld, {{RADIUS}}) AS fld,
-         COALESCE(n.riv, {{RADIUS}}) AS riv, COALESCE(sp.n, 0) AS species,
+         COALESCE(n.riv, {{RADIUS}}) AS riv, COALESCE(n.trb, {{RADIUS}}) AS trb, COALESCE(sp.n, 0) AS species,
          COALESCE(n.crit = 0, false)::INT + COALESCE(n.prop = 0, false)::INT + COALESCE(n.wet = 0, false)::INT
-           + COALESCE(n.fld = 0, false)::INT + COALESCE(n.riv = 0, false)::INT AS on_site
+           + COALESCE(n.fld = 0, false)::INT + COALESCE(n.riv = 0, false)::INT + COALESCE(n.trb = 0, false)::INT AS on_site
   FROM fac f LEFT JOIN near n USING (id) LEFT JOIN spp8 sp ON sp.h8 = f.h8
 ),
 vals AS (
@@ -88,4 +100,5 @@ vals AS (
   UNION ALL SELECT id, 'wetland_mi', 'Distance to a mapped wetland', wet, 'miles', 'num1', 'linear', -1 FROM agg
   UNION ALL SELECT id, 'floodplain_mi', 'Distance to a special flood hazard area', fld, 'miles', 'num1', 'linear', -1 FROM agg
   UNION ALL SELECT id, 'river_mi', 'Distance to a Wild and Scenic or inventoried river', riv, 'miles', 'num1', 'linear', -1 FROM agg
+  UNION ALL SELECT id, 'tribal_mi', 'Distance to tribal land', trb, 'miles', 'num1', 'linear', -1 FROM agg
 ),

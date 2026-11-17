@@ -34,7 +34,7 @@ RESIDENT_WEIGHTED = {"svi", "people_of_colour", "poverty", "income"}
 NO_BASELINE = {"watershed_peers"}  # counts other sample cells, which means nothing
 # distances capped at the radius: most sample cells sit at the cap, so a mean understates the
 # typical distance; use the median
-MEDIAN = {"critical_habitat_mi", "proposed_habitat_mi", "wetland_mi", "floodplain_mi", "river_mi"}
+MEDIAN = {"critical_habitat_mi", "proposed_habitat_mi", "wetland_mi", "floodplain_mi", "river_mi", "tribal_mi"}
 
 
 def query(sql):

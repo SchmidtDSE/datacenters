@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T11:08:52.949Z",
+ "generated": "2026-11-17T17:49:06.656Z",
  "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
  "datasets": [
   {
@@ -1339,6 +1339,53 @@
       "rel": "about",
       "href": "https://www.nps.gov/subjects/rivers/nri.htm",
       "title": "NPS Nationwide Rivers Inventory"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "title": "U.S. Government Works"
+     }
+    ]
+   }
+  },
+  {
+   "id": "census-2024-aiannh",
+   "prefixes": [
+    "s3://public-census/census-2024/aiannh/hex"
+   ],
+   "stac": {
+    "id": "census-2024-aiannh",
+    "title": "American Indian, Alaska Native and Native Hawaiian Areas (Census TIGER/Line 2024)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "U.S. Census Bureau",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://boettigerlab.berkeley.edu"
+     }
+    ],
+    "sci:citation": "U.S. Census Bureau, \"tl_2024_us_aiannh,\" TIGER/Line Shapefiles, 2024, <https://www2.census.gov/geo/tiger/TIGER2024/AIANNH/>. Accessed 2026-11-17.",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-census/census-2024/aiannh/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "type": "text/html",
+      "href": "https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/tiger-geo-line.html"
      },
      {
       "rel": "license",

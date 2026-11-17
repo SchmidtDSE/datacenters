@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T11:09:59.800688+00:00",
+ "generated": "2026-11-17T17:49:04.518755+00:00",
  "results": {
   "justice": {
    "justice": [
@@ -211,7 +211,7 @@
      "dir": -1,
      "value": 3.0,
      "pct": 46.4,
-     "pillar_score": 41.1
+     "pillar_score": 41.9
     },
     {
      "variable": "floodplain_mi",
@@ -222,7 +222,7 @@
      "dir": -1,
      "value": 1.5590000000000002,
      "pct": 13.2,
-     "pillar_score": 41.1
+     "pillar_score": 41.9
     },
     {
      "variable": "listed_species",
@@ -233,7 +233,7 @@
      "dir": 1,
      "value": 4.692698706099815,
      "pct": 46.7,
-     "pillar_score": 41.1
+     "pillar_score": 41.9
     },
     {
      "variable": "on_site",
@@ -242,9 +242,9 @@
      "fmt": "int",
      "scale": "linear",
      "dir": 1,
-     "value": 0.6649722735674677,
-     "pct": 45.6,
-     "pillar_score": 41.1
+     "value": 0.7097966728280961,
+     "pct": 44.5,
+     "pillar_score": 41.9
     },
     {
      "variable": "proposed_habitat_mi",
@@ -255,7 +255,7 @@
      "dir": -1,
      "value": 3.0,
      "pct": 48.9,
-     "pillar_score": 41.1
+     "pillar_score": 41.9
     },
     {
      "variable": "river_mi",
@@ -266,7 +266,18 @@
      "dir": -1,
      "value": 3.0,
      "pct": 46.4,
-     "pillar_score": 41.1
+     "pillar_score": 41.9
+    },
+    {
+     "variable": "tribal_mi",
+     "label": "Distance to tribal land",
+     "unit": "miles",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": -1,
+     "value": 3.0,
+     "pct": 48.4,
+     "pillar_score": 41.9
     },
     {
      "variable": "wetland_mi",
@@ -277,7 +288,7 @@
      "dir": -1,
      "value": 0.56015,
      "pct": 40.7,
-     "pillar_score": 41.1
+     "pillar_score": 41.9
     }
    ]
   }

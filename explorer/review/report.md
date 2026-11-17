@@ -24,7 +24,7 @@ Each variable is ranked as a mid-rank percentile among the facilities in view, a
 
 {{table:weak}}
 
-Cooling energy demand and cooling water consumption exist only for PNNL projected sites, so they are blank for the other sources and do no harm there. Critical habitat, proposed critical habitat and the river distance are mostly ties because few facilities have any within {{radius}} miles; they still mark the facilities that do. Redlining and dedicated fossil power already have weight 0. Power capacity is reported for {{power_coverage}} of FracTracker records, and the facilities that report it are ranked against each other alone.
+Cooling energy demand and cooling water consumption exist only for PNNL projected sites, so they are blank for the other sources and do no harm there. Critical habitat, proposed critical habitat, the river distance and the distance to tribal land are mostly ties because few facilities have any within {{radius}} miles; they still mark the facilities that do. Redlining and dedicated fossil power already have weight 0. Power capacity is reported for {{power_coverage}} of FracTracker records, and the facilities that report it are ranked against each other alone.
 
 # Overlap between variables
 

@@ -104,15 +104,16 @@ The regulatory screen measures how close each facility is to resources that comm
 
 | Variable | Data | Law | Higher percentile when |
 |---|---|---|---|
-| Resources in the site cell | the five distances below | | more of them |
+| Resources in the site cell | the six distances below | | more of them |
 | Listed and proposed species whose range covers the site | USFWS species ranges, endangered, threatened and proposed | ESA section 7 | more species |
 | Distance to final critical habitat | USFWS final critical habitat | ESA section 7 | nearer |
 | Distance to proposed critical habitat | USFWS proposed critical habitat | ESA section 7 conference | nearer |
 | Distance to a mapped wetland | NWI emergent, forested or shrub, and estuarine and marine wetlands | Clean Water Act section 404 | nearer |
 | Distance to a special flood hazard area | FEMA NFHL A and V zones | Executive Order 11988 | nearer |
 | Distance to a Wild and Scenic or inventoried river | designated Wild and Scenic Rivers and the Nationwide Rivers Inventory | Wild and Scenic Rivers Act | nearer |
+| Distance to tribal land | Census 2024 AIANNH reservations, trust land and Hawaiian home lands | NHPA section 106 and Executive Order 13175 | nearer |
 
-Distances run from the facility to the centre of the nearest res-8 cell holding the resource, so they are accurate to about half a mile. A distance is 0 when the site cell holds the resource and equals the radius when none lies within it. The national baseline uses the median distance, since most US locations sit at the cap. The species count uses only the site cell, as IPaC screens a project location; ranges are coarse, often whole counties, so a species in the count need not occur at the site. Tribal areas (NHPA section 106 and Executive Order 13175), the National Register of Historic Places and EPA nonattainment areas (Clean Air Act conformity) will be added when they reach the catalog (boettiger-lab/data-workflows#945 to #947). Prime farmland (Farmland Protection Policy Act) is mapped in the catalog only for California, and Section 4(f) applies only to transportation projects, so both are left out.
+Distances run from the facility to the centre of the nearest res-8 cell holding the resource, so they are accurate to about half a mile. A distance is 0 when the site cell holds the resource and equals the radius when none lies within it. The national baseline uses the median distance, since most US locations sit at the cap. The species count uses only the site cell, as IPaC screens a project location; ranges are coarse, often whole counties, so a species in the count need not occur at the site. Tribal land counts the Census legal land bases (CLASSFP D2 to D5, D8 and F1) and the 25 Oklahoma tribal statistical areas (MTFCC G2140). Census classes the Oklahoma areas as statistical, but since McGirt v. Oklahoma (2020) courts have held several of them, including the Muscogee (Creek), Cherokee, Chickasaw, Choctaw, Seminole and Quapaw, to be reservations. The other statistical areas (tribal and state designated, Alaska Native village and joint-use areas) are left out. The National Register of Historic Places and EPA nonattainment areas (Clean Air Act conformity) will be added when they reach the catalog (boettiger-lab/data-workflows#946 and #947). Prime farmland (Farmland Protection Policy Act) is mapped in the catalog only for California, and Section 4(f) applies only to transportation projects, so both are left out.
 
 ## Hazard exposure
 

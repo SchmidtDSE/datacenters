@@ -438,6 +438,19 @@ for cid, path, asset, name, color, width, tips in [
                     "outline_style": outline(color, width, 0.5),
                     "tooltip_fields": tips}],
     })
+collections.append({
+    "collection_id": "census-2024-aiannh",
+    "collection_url": f"{S3}/public-census/census-2024/aiannh/stac-collection.json",
+    "group": BOUNDS,
+    "assets": [{"id": "aiannh-pmtiles", "display_name": "Tribal land", "visible": False,
+                "default_style": {"fill-color": "#8D6E63", "fill-opacity": 0.3},
+                "outline_style": outline("#5D4037", 0.6, 0.8),
+                # legal land bases and Oklahoma tribal areas, as in the explorer's regulatory screen
+                "default_filter": ["any",
+                                   ["match", ["get", "CLASSFP"], ["D2", "D3", "D4", "D5", "D8", "F1"], True, False],
+                                   ["==", ["get", "MTFCC"], "G2140"]],
+                "tooltip_fields": ["NAMELSAD", "AIANNHR", "CLASSFP"]}],
+})
 
 # glen draws collections in config order, the first at the bottom of the map. Raster and area
 # fills go first, boundary outlines and local actions above them, and data center points last
@@ -445,7 +458,7 @@ for cid, path, asset, name, color, width, tips in [
 DRAW_ORDER = [
     "nlcd", "pad-us-4.1-fee", "usfws-species-ranges", "usfws-critical-habitat-final", "sea-level-rise", "flood-hazard",
     "wetlands-nwi", "usgs-wbd-hu8", "epa-sab-v3-cws", "ghs-pop-2020", "mappinginequality",
-    "acs-2020-2024-blockgroup", "svi-2022",
+    "acs-2020-2024-blockgroup", "svi-2022", "census-2024-aiannh",
     "census-2024-tract", "census-2024-county", "census-2024-state",
     "fractracker-moratoriums", "pnnl-im3-projected",
     "pnnl-im3-atlas-campus", "pnnl-im3-atlas-building", "epoch-ai-data-center-footprints",

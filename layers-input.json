@@ -622,6 +622,63 @@
             ]
         },
         {
+            "collection_id": "census-2024-aiannh",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/aiannh/stac-collection.json",
+            "group": {
+                "name": "Boundaries",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "aiannh-pmtiles",
+                    "display_name": "Tribal land",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#8D6E63",
+                        "fill-opacity": 0.3
+                    },
+                    "outline_style": {
+                        "line-color": "#5D4037",
+                        "line-width": 0.6,
+                        "line-opacity": 0.8
+                    },
+                    "default_filter": [
+                        "any",
+                        [
+                            "match",
+                            [
+                                "get",
+                                "CLASSFP"
+                            ],
+                            [
+                                "D2",
+                                "D3",
+                                "D4",
+                                "D5",
+                                "D8",
+                                "F1"
+                            ],
+                            true,
+                            false
+                        ],
+                        [
+                            "==",
+                            [
+                                "get",
+                                "MTFCC"
+                            ],
+                            "G2140"
+                        ]
+                    ],
+                    "tooltip_fields": [
+                        "NAMELSAD",
+                        "AIANNHR",
+                        "CLASSFP"
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "census-2024-tract",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-census/census-2024/tract/stac-collection.json",
             "group": {
