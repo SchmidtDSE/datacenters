@@ -98,9 +98,24 @@ The cumulative variable matters because data centers cluster, as in Loudoun Coun
 | Critical habitat share | USFWS final critical habitat | higher | radius |
 | Protected area share | PAD-US 4.1 fee lands, GAP 1–3 | higher | radius |
 
+## Regulatory screen
+
+The regulatory screen measures how close each facility is to resources that commonly require consultation or a permit in a federal environmental review under NEPA and related laws. It is a screen, not a finding that any review applies: a federal nexus, a jurisdictional determination or a consultation decides that. The leaderboard gives it no weight by default, because wetlands, floodplains and critical habitat also feed the water and biodiversity pillars.
+
+| Variable | Data | Law | Higher percentile when |
+|---|---|---|---|
+| Resources in the site cell | the five below | | more of them |
+| Distance to final critical habitat | USFWS final critical habitat | ESA section 7 | nearer |
+| Distance to proposed critical habitat | USFWS proposed critical habitat | ESA section 7 conference | nearer |
+| Distance to a mapped wetland | NWI emergent, forested or shrub, and estuarine and marine wetlands | Clean Water Act section 404 | nearer |
+| Distance to a special flood hazard area | FEMA NFHL A and V zones | Executive Order 11988 | nearer |
+| Distance to a Wild and Scenic or inventoried river | designated Wild and Scenic Rivers and the Nationwide Rivers Inventory | Wild and Scenic Rivers Act | nearer |
+
+Distances run from the facility to the centre of the nearest res-8 cell holding the resource, so they are accurate to about half a mile. A distance is 0 when the site cell holds the resource and equals the radius when none lies within it. The national baseline uses the median distance, since most US locations sit at the cap. Tribal areas (NHPA section 106 and Executive Order 13175), the National Register of Historic Places, EPA nonattainment areas (Clean Air Act conformity) and USFWS listed species ranges will be added when they reach the catalog (boettiger-lab/data-workflows#944 to #947). Prime farmland (Farmland Protection Policy Act) is mapped in the catalog only for California, and Section 4(f) applies only to transportation projects, so both are left out.
+
 ## Hazard exposure
 
-A fifth pillar is optional. It would hold hazards to the facility itself: sea level rise of 5 feet, wildland-urban interface, and projected summer warming from CHELSA SSP3-7.0 for 2041–2070, which raises cooling demand. These describe risk to the facility, not its impact on others, so we propose starting with them in the facility card, outside the score.
+A further pillar is optional. It would hold hazards to the facility itself: sea level rise of 5 feet, wildland-urban interface, and projected summer warming from CHELSA SSP3-7.0 for 2041–2070, which raises cooling demand. These describe risk to the facility, not its impact on others, so we propose starting with them in the facility card, outside the score.
 
 ## Facility card
 

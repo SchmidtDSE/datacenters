@@ -1,0 +1,55 @@
+{
+    "label": "Regulatory screen",
+    "color": "#6a3d9a",
+    "blurb": "How close the site is to resources that trigger federal environmental review, such as critical habitat, wetlands, floodplains and protected rivers.",
+    "queries": {
+        "regulatory": {
+            "file": "regulatory.sql",
+            "all": "regulatory-all.sql",
+            "statewide": false
+        }
+    },
+    "headlines": [
+        {
+            "query": "regulatory",
+            "field": "pillar_score",
+            "label": "Provisional regulatory screen score",
+            "format": "num1",
+            "note": "Mean of this pillar's variable percentiles among the facilities in view, 0–100"
+        }
+    ],
+    "charts": [
+        {
+            "query": "biodiversity",
+            "title": "Percentile by variable",
+            "subtitle": "Percentiles run from 0 to 100 among the facilities in view, and a higher percentile means a greater potential impact.",
+            "category": "label",
+            "format": "num1",
+            "domain_max": 100,
+            "series": [
+                {
+                    "field": "pct",
+                    "label": "Percentile",
+                    "color": "#6a3d9a"
+                }
+            ],
+            "label_lines": 2
+        },
+        {
+            "type": "percentile-strip",
+            "title": "Distribution across facilities",
+            "subtitle": "The dot marks this facility's value on the spread of all facilities in view.",
+            "query": "biodiversity",
+            "key": "variable",
+            "label": "label",
+            "value": "value",
+            "format_field": "fmt",
+            "rank_field": "pct",
+            "scale_field": "scale",
+            "peer_label": "facilities",
+            "note": "Provisional scores",
+            "wide": true
+        }
+    ],
+    "method": "The screen marks resources that commonly require consultation or a permit in a federal environmental review. Final and proposed critical habitat are USFWS designations under the Endangered Species Act (section 7); proposed habitat has no legal effect until made final. Wetlands are National Wetlands Inventory freshwater emergent, freshwater forested or shrub, and estuarine and marine wetlands, a guide to waters that may need a Clean Water Act section 404 permit; a jurisdictional determination decides that. Special flood hazard areas are FEMA 1% annual chance A and V zones, the floodplains of Executive Order 11988. Rivers are designated Wild and Scenic Rivers and Nationwide Rivers Inventory segments (American Rivers compilation). Each distance runs from the facility point to the centre of the nearest H3 res-8 cell (about 0.7 km²) within the chosen radius that holds the resource, so it is accurate to about half a mile; it is 0 when the site cell holds the resource, and equals the radius when none lies within it. The site count is how many of the five resources lie in the site cell. Tribal areas, historic places, air quality nonattainment areas and listed species ranges will be added when they reach the data catalog. Scores are mid-rank percentiles (0–100) among the facilities in view, with direction applied so a higher percentile means a nearer resource; tied values share the midpoint of their rank range. The pillar score is the plain mean of the variable percentiles. This is a screen, not a determination that any review applies, and all of it is provisional."
+}

@@ -14,7 +14,8 @@
     "justice",
     "climate",
     "water",
-    "biodiversity"
+    "biodiversity",
+    "regulatory"
   ],
   "params": [
     {
@@ -257,6 +258,11 @@
       {
         "theme": "biodiversity",
         "query": "biodiversity"
+      },
+      {
+        "theme": "regulatory",
+        "query": "regulatory",
+        "weight": 0
       }
     ],
     "overall": {

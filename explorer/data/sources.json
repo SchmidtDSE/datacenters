@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T23:46:45.967Z",
+ "generated": "2026-11-17T06:15:27.588Z",
  "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
  "datasets": [
   {
@@ -288,6 +288,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "U.S. Census Bureau, \"tl_2024_us_county,\" TIGER/Line Shapefiles, 2024, <https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/>.",
     "links": [
      {
       "rel": "self",
@@ -333,6 +334,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "U.S. Census Bureau, \"tl_2024_us_state,\" TIGER/Line Shapefiles, 2024, <https://www2.census.gov/geo/tiger/TIGER2024/STATE/>.",
     "links": [
      {
       "rel": "self",
@@ -546,6 +548,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "Centers for Disease Control and Prevention/ Agency for Toxic Substances and Disease Registry/ Geospatial Research, Analysis, and Services Program. CDC/ATSDR Social Vulnerability Index 2022 Database U.S. https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html",
     "links": [
      {
       "rel": "self",
@@ -587,6 +590,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "U.S. Census Bureau, \"American Community Survey 5-Year Estimates: Table-Based Summary File,\" 2020-2024, <https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/>; U.S. Census Bureau, \"tl_2024_[state FIPS]_bg (per-state files),\" TIGER/Line Shapefiles, 2024, <https://www2.census.gov/geo/tiger/TIGER2024/BG/>.",
     "links": [
      {
       "rel": "self",
@@ -628,6 +632,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "Nelson, R. K., Winling, L, et al. (2023). Mapping Inequality: Redlining in New Deal America. Digital Scholarship Lab. https://dsl.richmond.edu/panorama/redlining.",
     "links": [
      {
       "rel": "self",
@@ -668,6 +673,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "Noon, M. L., Goldstein, A., Ledezma, J. C., Roehrdanz, P. R., Cook-Patton, S. C., Spawn-Lee, S. A., Wright, T. M., Gonzalez-Roglich, M., Hole, D. G., Rockström, J., & Turner, W. R. (2021). Mapping the irrecoverable carbon in Earth’s ecosystems. Nature Sustainability, 5(1), 37–46. https://doi.org/10.1038/s41893-021-00803-6",
     "links": [
      {
       "rel": "self",
@@ -719,6 +725,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "U.S. Environmental Protection Agency, Office of Research and Development. (2026). Community Water System Service Area Boundaries (Version 3.0) [Data set]. U.S. Environmental Protection Agency. https://github.com/USEPA/ORD_SAB_Model",
     "links": [
      {
       "rel": "self",
@@ -770,6 +777,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "U.S. Geological Survey (USGS), U.S. Department of Agriculture - Natural Resources Conservation Service (NRCS), and U.S. Environmental Protection Agency (EPA). (2025). USGS Watershed Boundary Dataset (WBD) - National (published 20250107) FileGDB [Data set]. U.S. Geological Survey. https://www.usgs.gov/national-hydrography/watershed-boundary-dataset",
     "links": [
      {
       "rel": "self",
@@ -870,6 +878,7 @@
       ]
      }
     ],
+    "sci:citation": "Federal Emergency Management Agency (FEMA). (2026). National Flood Hazard Layer (NFHL), S_FLD_HAZ_AR flood hazard zones from effective county FIRM products [Data set]. FEMA. https://www.fema.gov/flood-maps/national-flood-hazard-layer",
     "links": [
      {
       "rel": "self",
@@ -910,6 +919,8 @@
       "url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd/"
      }
     ],
+    "sci:citation": "U.S. Geological Survey (USGS), 2024, Annual NLCD Collection 1 Science Products: U.S. Geological Survey data release, https://doi.org/10.5066/P94UXNTS",
+    "sci:doi": "10.5066/P94UXNTS",
     "links": [
      {
       "rel": "self",
@@ -936,7 +947,7 @@
     "license": "CC-BY-4.0",
     "providers": [
      {
-      "name": "David M. Theobald et al.",
+      "name": "The Nature Conservancy (Kennedy, Oakleaf, Theobald, Baruch-Mordo and Kiesecker)",
       "roles": [
        "producer",
        "licensor"
@@ -952,6 +963,7 @@
       "url": "https://s3-west.nrp-nautilus.io/public-human-modification/"
      }
     ],
+    "sci:citation": "Kennedy, C. M., Oakleaf, J., Theobald, D. M., Baruch-Mordo, S., & Kiesecker, J. (2018). Global Human Modification [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.7283087",
     "sci:doi": "10.6084/m9.figshare.7283087",
     "links": [
      {
@@ -998,6 +1010,7 @@
       "url": "https://github.com/boettiger-lab"
      }
     ],
+    "sci:citation": "IUCN. 2025. The IUCN Red List of Threatened Species. Version 2025-2. https://www.iucnredlist.org.",
     "links": [
      {
       "rel": "self",
@@ -1076,7 +1089,7 @@
    ],
    "stac": {
     "id": "usfws-critical-habitat-final",
-    "title": "USFWS Critical Habitat — (-179.14643, 13.639711, 179.776432, 74.024895) (Polygon Features)",
+    "title": "USFWS Critical Habitat — Final (Polygon Features)",
     "license": "public-domain",
     "providers": [
      {
@@ -1096,6 +1109,7 @@
       "url": "https://boettigerlab.berkeley.edu"
      }
     ],
+    "sci:citation": "U.S. Fish and Wildlife Service. (2026). FWS HQ ES Critical Habitat [Data set]. https://gis-fws.opendata.arcgis.com/maps/794de45b9d774d21aed3bf9b5313ee24",
     "links": [
      {
       "rel": "self",
@@ -1147,6 +1161,135 @@
       "rel": "about",
       "href": "https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview",
       "title": "PAD-US Data Overview"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "title": "U.S. Government Works"
+     }
+    ]
+   }
+  },
+  {
+   "id": "usfws-critical-habitat-proposed",
+   "prefixes": [
+    "s3://public-usfws/critical-habitat/proposed/hex"
+   ],
+   "stac": {
+    "id": "usfws-critical-habitat-proposed",
+    "title": "USFWS Critical Habitat — Proposed (Polygon Features)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "U.S. Fish and Wildlife Service (USFWS)",
+      "roles": [
+       "producer",
+       "licensor"
+      ],
+      "url": "https://www.fws.gov/program/endangered-species"
+     },
+     {
+      "name": "Boettiger Lab",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://boettigerlab.berkeley.edu"
+     }
+    ],
+    "sci:citation": "U.S. Fish and Wildlife Service. (2026). FWS HQ ES Critical Habitat [Data set]. https://gis-fws.opendata.arcgis.com/maps/794de45b9d774d21aed3bf9b5313ee24",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/proposed/stac-collection.json",
+      "type": "application/json"
+     }
+    ]
+   }
+  },
+  {
+   "id": "american-rivers-wild-scenic-designated",
+   "prefixes": [
+    "s3://public-rivers/american-rivers/wild-scenic-designated/hex"
+   ],
+   "stac": {
+    "id": "american-rivers-wild-scenic-designated",
+    "title": "Designated Wild and Scenic Rivers",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "American Rivers",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.americanrivers.org"
+     },
+     {
+      "name": "Boettiger Lab / NRP",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://s3-west.nrp-nautilus.io/public-rivers/"
+     }
+    ],
+    "sci:citation": "American Rivers. (2025). River Protection Map: Designated Rivers [Data set]. ArcGIS Online. https://services9.arcgis.com/90v9hhDSTUTen7c9/arcgis/rest/services/River_Protection_Map_WFL1/FeatureServer/2",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/wild-scenic-designated/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.rivers.gov/",
+      "title": "National Wild and Scenic Rivers System"
+     },
+     {
+      "rel": "license",
+      "href": "https://www.usa.gov/government-works",
+      "title": "U.S. Government Works"
+     }
+    ]
+   }
+  },
+  {
+   "id": "american-rivers-nri-2024",
+   "prefixes": [
+    "s3://public-rivers/american-rivers/nri-2024/hex"
+   ],
+   "stac": {
+    "id": "american-rivers-nri-2024",
+    "title": "Nationwide Rivers Inventory 2024 (NRI)",
+    "license": "public-domain",
+    "providers": [
+     {
+      "name": "National Park Service",
+      "roles": [
+       "producer"
+      ],
+      "url": "https://www.nps.gov/subjects/rivers/nri.htm"
+     },
+     {
+      "name": "Boettiger Lab / NRP",
+      "roles": [
+       "processor",
+       "host"
+      ],
+      "url": "https://s3-west.nrp-nautilus.io/public-rivers/"
+     }
+    ],
+    "sci:citation": "U.S. Department of the Interior, National Park Service. 2024. Nationwide Rivers Inventory (NRI): National Park Service data release, https://irma.nps.gov/DataStore/Reference/Profile/2305275",
+    "links": [
+     {
+      "rel": "self",
+      "href": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/nri-2024/stac-collection.json",
+      "type": "application/json"
+     },
+     {
+      "rel": "about",
+      "href": "https://www.nps.gov/subjects/rivers/nri.htm",
+      "title": "NPS Nationwide Rivers Inventory"
      },
      {
       "rel": "license",

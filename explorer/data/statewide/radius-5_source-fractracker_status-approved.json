@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T01:03:33.472653+00:00",
+ "generated": "2026-11-17T06:15:49.792867+00:00",
  "results": {
   "justice": {
    "justice": [
@@ -197,6 +197,76 @@
      "value": 9.933637245841036,
      "pct": 54.9,
      "pillar_score": 77.3
+    }
+   ]
+  },
+  "regulatory": {
+   "regulatory": [
+    {
+     "variable": "critical_habitat_mi",
+     "label": "Distance to final critical habitat",
+     "unit": "miles",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": -1,
+     "value": 5.0,
+     "pct": 45.1,
+     "pillar_score": 39.4
+    },
+    {
+     "variable": "floodplain_mi",
+     "label": "Distance to a special flood hazard area",
+     "unit": "miles",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": -1,
+     "value": 1.5590000000000002,
+     "pct": 13.2,
+     "pillar_score": 39.4
+    },
+    {
+     "variable": "on_site",
+     "label": "Screened resources in the site cell",
+     "unit": "resources",
+     "fmt": "int",
+     "scale": "linear",
+     "dir": 1,
+     "value": 0.6691312384473198,
+     "pct": 45.1,
+     "pillar_score": 39.4
+    },
+    {
+     "variable": "proposed_habitat_mi",
+     "label": "Distance to proposed critical habitat",
+     "unit": "miles",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": -1,
+     "value": 5.0,
+     "pct": 49.5,
+     "pillar_score": 39.4
+    },
+    {
+     "variable": "river_mi",
+     "label": "Distance to a Wild and Scenic or inventoried river",
+     "unit": "miles",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": -1,
+     "value": 5.0,
+     "pct": 42.6,
+     "pillar_score": 39.4
+    },
+    {
+     "variable": "wetland_mi",
+     "label": "Distance to a mapped wetland",
+     "unit": "miles",
+     "fmt": "num1",
+     "scale": "linear",
+     "dir": -1,
+     "value": 0.56015,
+     "pct": 40.7,
+     "pillar_score": 39.4
     }
    ]
   }

@@ -1,6 +1,6 @@
 # Data Center Explorer
 
-The Data Center Explorer ranks US data centers by their potential impacts in four pillars: environmental justice, climate footprint, water, and biodiversity and land. It is served at `/explorer/` beside the map and chat app, and it has no JavaScript of its own: it is configuration on [glen-charts](https://github.com/SchmidtDSE/glen-charts). The design and the decisions behind it are in [DESIGN.md](DESIGN.md).
+The Data Center Explorer ranks US data centers by their potential impacts in four pillars: environmental justice, climate footprint, water, and biodiversity and land. A fifth, the regulatory screen, measures how close each facility is to resources that trigger federal environmental review; it starts with no weight in the overall score because its wetlands, floodplains and critical habitat also feed other pillars. It is served at `/explorer/` beside the map and chat app, and it has no JavaScript of its own: it is configuration on [glen-charts](https://github.com/SchmidtDSE/glen-charts). The design and the decisions behind it are in [DESIGN.md](DESIGN.md).
 
 All scores are provisional. They describe each facility's setting and what its source reports about it, not measured impacts, and the variables and weights have not been reviewed.
 

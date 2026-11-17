@@ -41,5 +41,5 @@ app = json.loads(app_file.read_text())
 jur = app["jurisdictions"][0]
 jur["list"] = ctes + (sql / "list.sql").read_text()
 jur["aoi"] = ctes + "SELECT DISTINCT h0, h8 FROM ring WHERE id = {{ID}}\n"
-app_file.write_text(json.dumps(app, indent=4, ensure_ascii=False) + "\n")
+app_file.write_text(json.dumps(app, indent=2, ensure_ascii=False) + "\n")
 print(app_file)

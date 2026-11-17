@@ -7,7 +7,8 @@ branch of explorer/sql/units.sql), scored with the same theme SQL as the facilit
 
   value  the typical US value of each variable. Composition variables (social vulnerability,
          people of colour, poverty, income) are weighted by the residents around each sample
-         cell, so they describe the typical US resident; the rest are a plain mean over cells,
+         cell, so they describe the typical US resident; the regulatory screen's distances,
+         capped at the radius, are a median over cells; the rest are a plain mean over cells,
          so they describe a typical place. Facility attributes have no national value.
   pct    where that value would rank among the facilities in view (mid-rank, 0-100).
 
@@ -28,9 +29,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent / "explorer"
 APP = json.loads((ROOT / "config" / "app.json").read_text())
 MCP = APP["mcp_url"]
-PILLARS = ["justice", "climate", "water", "biodiversity"]
+PILLARS = ["justice", "climate", "water", "biodiversity", "regulatory"]
 RESIDENT_WEIGHTED = {"svi", "people_of_colour", "poverty", "income"}
 NO_BASELINE = {"watershed_peers"}  # counts other sample cells, which means nothing
+# distances capped at the radius: most sample cells sit at the cap, so a mean understates the
+# typical distance; use the median
+MEDIAN = {"critical_habitat_mi", "proposed_habitat_mi", "wetland_mi", "floodplain_mi", "river_mi"}
 
 
 def query(sql):
@@ -81,7 +85,13 @@ def baselines(radius, refresh):
             vals = [(r["value"], residents.get(r["id"], 0) if var in RESIDENT_WEIGHTED else 1)
                     for r in rows if r["value"] is not None]
             w = sum(x for _, x in vals)
-            value = None if var in NO_BASELINE or not vals or w == 0 else sum(v * x for v, x in vals) / w
+            if var in NO_BASELINE or not vals or w == 0:
+                value = None
+            elif var in MEDIAN:
+                xs = sorted(v for v, _ in vals)
+                value = (xs[(len(xs) - 1) // 2] + xs[len(xs) // 2]) / 2
+            else:
+                value = sum(v * x for v, x in vals) / w
             meta = {k: rows[0][k] for k in ("variable", "label", "unit", "fmt", "scale", "dir")}
             out[theme][var] = {**meta, "value": value}
     return out
