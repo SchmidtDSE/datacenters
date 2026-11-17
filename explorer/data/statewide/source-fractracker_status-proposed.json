@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T23:23:27.818796+00:00",
+ "generated": "2026-11-17T01:03:33.472653+00:00",
  "results": {
   "climate": {
    "climate": [
@@ -66,20 +66,20 @@
      "name": "United States",
      "source": "FracTracker",
      "status": "793 facilities in view",
-     "operator": null,
+     "operator": "260 named operators",
      "tenant": null,
      "mw": 111855.0,
-     "online": null,
-     "power_source": null,
+     "online": "113 facilities give a year, 2002 to 2035",
+     "power_source": "27 of 88 reporting name natural gas",
      "dedicated_power": null,
-     "cooling": null,
+     "cooling": "25 of 33 reporting use water cooling",
      "pushback": "153 facilities with community pushback reported",
      "resistance": null,
-     "nda": null,
+     "nda": "7 facilities report an NDA",
      "state": null,
-     "county": null,
-     "actions": null,
-     "nearby": null
+     "county": "381 counties in 46 states",
+     "actions": "621 facilities in places with a local action",
+     "nearby": "115 facilities with another source within 1.5 km"
     }
    ]
   }

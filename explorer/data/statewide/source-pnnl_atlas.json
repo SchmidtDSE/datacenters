@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T23:23:27.818796+00:00",
+ "generated": "2026-11-17T01:03:33.472653+00:00",
  "results": {
   "climate": {
    "climate": [
@@ -66,7 +66,7 @@
      "name": "United States",
      "source": "PNNL IM3 atlas",
      "status": "254 facilities in view",
-     "operator": null,
+     "operator": "56 named operators",
      "tenant": null,
      "mw": null,
      "online": null,
@@ -77,9 +77,9 @@
      "resistance": null,
      "nda": null,
      "state": null,
-     "county": null,
-     "actions": null,
-     "nearby": null
+     "county": "114 counties in 32 states",
+     "actions": "157 facilities in places with a local action",
+     "nearby": "193 facilities with another source within 1.5 km"
     }
    ]
   }

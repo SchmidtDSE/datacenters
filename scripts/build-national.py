@@ -128,14 +128,30 @@ def main():
         pk = f.stem[len("facility-"):]
         facilities = [rows[0] for rows in json.loads(f.read_text()).values() if rows]
         mw = [r["mw"] for r in facilities if r.get("mw")]
+        n = lambda test: sum(1 for r in facilities if test(r))
+        has = lambda k: lambda r: r.get(k) not in (None, "", "nan")
+        low = lambda k: lambda r: (r.get(k) or "").lower()
+        years = sorted(int(m.group()) for r in facilities if (m := re.search(r"20\d\d", str(r.get("online") or ""))))
+        operators = {r["operator"] for r in facilities if has("operator")(r)}
         row = {"name": "United States", "source": facilities[0]["source"] if facilities else None,
                "status": f"{len(facilities):,} facilities in view",
-               "operator": None, "tenant": None,
-               "mw": sum(mw) if mw else None, "online": None, "power_source": None, "dedicated_power": None,
-               "cooling": None, "pushback": f"{sum(1 for r in facilities if (r.get('pushback') or '').lower() == 'yes'):,} facilities with community pushback reported"
+               "operator": f"{len(operators):,} named operators" if operators else None, "tenant": None,
+               "mw": sum(mw) if mw else None,
+               "online": f"{len(years):,} facilities give a year, {years[0]} to {years[-1]}" if years else None,
+               "power_source": (f"{n(has('power_source')):,} name a power supplier" if facilities[0]["source"] == "Epoch AI"
+                                else f"{n(lambda r: 'gas' in low('power_source')(r)):,} of {n(has('power_source')):,} reporting name natural gas")
+               if n(has("power_source")) else None,
+               "dedicated_power": None,
+               "cooling": f"{n(lambda r: low('cooling')(r).startswith(('water', '100%'))):,} of {n(has('cooling')):,} reporting use water cooling"
+               if n(has("cooling")) else None,
+               "pushback": f"{n(lambda r: low('pushback')(r) == 'yes'):,} facilities with community pushback reported"
                if facilities and facilities[0]["source"] == "FracTracker" else None,
-               "resistance": None, "nda": None, "state": None, "county": None,
-               "actions": None, "nearby": None}
+               "resistance": None,
+               "nda": f"{n(lambda r: low('nda')(r).startswith('yes')):,} facilities report an NDA" if n(has("nda")) else None,
+               "state": None,
+               "county": f"{len({(r.get('state'), r.get('county')) for r in facilities}):,} counties in {len({r.get('state') for r in facilities})} states",
+               "actions": f"{n(lambda r: r.get('actions') not in (None, 'None recorded')):,} facilities in places with a local action",
+               "nearby": f"{n(lambda r: r.get('nearby') not in (None, 'None')):,} facilities with another source within 1.5 km"}
         files.setdefault(pk, {})["facility"] = {"facility": [row]}
 
     out_dir = ROOT / "data" / "statewide"

@@ -11,6 +11,11 @@ Four independent sources overlap and use different definitions. Never add them t
 - `epoch-ai-data-centers` is global: filter to `country = 'United States'` for US questions.
 - `pnnl-im3-projected` holds 20 modelled scenarios, not real proposals. Filter to one `growth_scenario` and one `market_gravity_weight` before counting or summing, and name the scenario. The map shows moderate and higher growth at weight 50.
 
+## Answering quickly
+
+- A request to show or highlight features on the map needs a filter or style on the layer, not SQL. The FracTracker layer's `status` values are `Proposed`, `Pre-proposal`, `Approved/Permitted/Under construction`, `Operating`, `Expanding`, `Suspended` and `Cancelled`; `community_pushback` is `Yes` or `yes` when pushback is reported; `sizerank` runs from `Small (0-10 MW)` to `Mega campus (>1,000 MW)`.
+- A count or total from one data center file needs one query. Look up the schema only for columns not named here or in the layer's tooltip.
+
 ## Equity comparisons
 
 - SVI uses -999 for missing values: filter `RPL_THEMES >= 0`.

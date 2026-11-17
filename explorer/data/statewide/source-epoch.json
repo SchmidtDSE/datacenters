@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T23:23:27.818796+00:00",
+ "generated": "2026-11-17T01:03:33.472653+00:00",
  "results": {
   "climate": {
    "climate": [
@@ -66,20 +66,20 @@
      "name": "United States",
      "source": "Epoch AI",
      "status": "77 facilities in view",
-     "operator": null,
+     "operator": "12 named operators",
      "tenant": null,
      "mw": 12640.32971,
      "online": null,
-     "power_source": null,
+     "power_source": "18 name a power supplier",
      "dedicated_power": null,
      "cooling": null,
      "pushback": null,
      "resistance": null,
      "nda": null,
      "state": null,
-     "county": null,
-     "actions": null,
-     "nearby": null
+     "county": "62 counties in 29 states",
+     "actions": "49 facilities in places with a local action",
+     "nearby": "70 facilities with another source within 1.5 km"
     }
    ]
   }

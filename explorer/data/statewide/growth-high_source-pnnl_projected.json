@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T23:23:27.818796+00:00",
+ "generated": "2026-11-17T01:03:33.472653+00:00",
  "results": {
   "climate": {
    "climate": [
@@ -72,14 +72,14 @@
      "online": null,
      "power_source": null,
      "dedicated_power": null,
-     "cooling": null,
+     "cooling": "832 of 909 reporting use water cooling",
      "pushback": null,
      "resistance": null,
      "nda": null,
      "state": null,
-     "county": null,
-     "actions": null,
-     "nearby": null
+     "county": "125 counties in 34 states",
+     "actions": "572 facilities in places with a local action",
+     "nearby": "173 facilities with another source within 1.5 km"
     }
    ]
   }

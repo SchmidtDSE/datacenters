@@ -27,11 +27,11 @@ The queries run on the app's MCP server, which reads the catalog on NRP.
 python3 scripts/build-explorer-sql.py
 
 # 2. precompute the lists and every facility's rows for every setting
-npx github:SchmidtDSE/glen-charts#<version> precompute --site explorer lists \
+npx github:SchmidtDSE/glen-charts#v0.18.0 precompute --site explorer lists \
   --param source=all --param status=all --param growth=all --param radius=all
-npx github:SchmidtDSE/glen-charts#<version> precompute --site explorer results \
+npx github:SchmidtDSE/glen-charts#v0.18.0 precompute --site explorer results \
   --param source=all --param status=all --param growth=all --param radius=all
-npx github:SchmidtDSE/glen-charts#<version> precompute --site explorer sources
+npx github:SchmidtDSE/glen-charts#v0.18.0 precompute --site explorer sources
 
 # 3. the national view, from a fixed sample of US locations scored with the same SQL
 python3 scripts/build-national.py
