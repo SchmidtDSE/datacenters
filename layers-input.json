@@ -19,6 +19,7 @@
         "https://cdn.jsdelivr.net/gh/SchmidtDSE/glen@v4.0.6/core/plugins/geolocate.js"
     ],
     "auto_approve": true,
+    "export": true,
     "geocoder": {
         "provider": "nominatim",
         "search_box": true
